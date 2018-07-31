@@ -17,6 +17,7 @@ namespace RoiCalc
     {
         private const string ItemsFileName = @"items.roic";
 
+
         private IDictionary<string, Item> Items { get; set; }
 
         private ResultCollection Results { get; set; }
@@ -37,8 +38,23 @@ namespace RoiCalc
         {
             var senderGrid = (DataGridView)sender;
 
-            if (senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn &&
-                e.RowIndex >= 0)
+            if (!(senderGrid.Columns[e.ColumnIndex] is DataGridViewButtonColumn))
+            {
+                return;
+            }
+
+            // Ignore header
+            if (e.RowIndex == -1)
+            {
+                return;
+            }
+
+            if (e.ColumnIndex == 3)
+            {
+                Calculations.RemoveAt(e.RowIndex);
+                UpdateCalculationsView(Calculations);
+            }
+            else if (e.ColumnIndex == 4)
             {
                 Results += Calculations[e.RowIndex].Results;
                 UpdateResultView(Results);
@@ -153,35 +169,6 @@ namespace RoiCalc
             return items;
         }
 
-        private void btnCalc_Click(object sender, EventArgs e)
-        {
-            if (!Items.TryGetValue(cmbItems.Text, out Item item))
-            {
-                return;
-            }
-
-            if (!int.TryParse(txtCount.Text, out int count))
-            {
-                return;
-            }
-
-            if (!int.TryParse(txtInterval.Text, out int interval))
-            {
-                return;
-            }
-
-            Results = CalculateResults(item, count, interval);
-            UpdateResultView(Results);
-            Calculations.Add(new Calculation()
-            {
-                Item = item,
-                Count = count,
-                Interval = interval,
-                Results = Results
-            });
-            UpdateCalculationsView(Calculations);
-        }
-
         private void UpdateResultView(ResultCollection results)
         {
             dgvResults.Rows.Clear();
@@ -279,6 +266,35 @@ namespace RoiCalc
             }
 
             return results;
+        }
+
+        private void btnCalc_Click(object sender, EventArgs e)
+        {
+            if (!Items.TryGetValue(cmbItems.Text, out Item item))
+            {
+                return;
+            }
+
+            if (!int.TryParse(txtCount.Text, out int count))
+            {
+                return;
+            }
+
+            if (!int.TryParse(txtInterval.Text, out int interval))
+            {
+                return;
+            }
+
+            Results = CalculateResults(item, count, interval);
+            UpdateResultView(Results);
+            Calculations.Add(new Calculation()
+            {
+                Item = item,
+                Count = count,
+                Interval = interval,
+                Results = Results
+            });
+            UpdateCalculationsView(Calculations);
         }
 
         private void btnClearResult_Click(object sender, EventArgs e)

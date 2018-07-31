@@ -30,8 +30,6 @@
         {
             this.cmbItems = new ImageComboBox.CImageComboBox();
             this.dgvResults = new System.Windows.Forms.DataGridView();
-            this.clmResultName = new ImbaControls.DataGridViewTextImageColumn();
-            this.clmResultCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCount = new System.Windows.Forms.TextBox();
             this.txtInterval = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,10 +39,18 @@
             this.clmCalculationName = new ImbaControls.DataGridViewTextImageColumn();
             this.clmCalculationCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmCalculationInterval = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmCaclulationDelete = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmCalculationAddResult = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnCalc = new System.Windows.Forms.Button();
             this.btnClearResult = new System.Windows.Forms.Button();
             this.btnLoadItemsFromFile = new System.Windows.Forms.Button();
+            this.dataGridViewTextImageColumn1 = new ImbaControls.DataGridViewTextImageColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextImageColumn2 = new ImbaControls.DataGridViewTextImageColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clmResultName = new ImbaControls.DataGridViewTextImageColumn();
+            this.clmResultCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalculations)).BeginInit();
             this.SuspendLayout();
@@ -80,27 +86,9 @@
             this.dgvResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResults.ShowEditingIcon = false;
             this.dgvResults.ShowRowErrors = false;
-            this.dgvResults.Size = new System.Drawing.Size(249, 229);
+            this.dgvResults.Size = new System.Drawing.Size(182, 229);
             this.dgvResults.TabIndex = 1;
             this.dgvResults.TabStop = false;
-            // 
-            // clmResultName
-            // 
-            this.clmResultName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmResultName.HeaderText = "Name";
-            this.clmResultName.Image = null;
-            this.clmResultName.Name = "clmResultName";
-            this.clmResultName.ReadOnly = true;
-            this.clmResultName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // clmResultCount
-            // 
-            this.clmResultCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.clmResultCount.FillWeight = 50F;
-            this.clmResultCount.HeaderText = "Count";
-            this.clmResultCount.Name = "clmResultCount";
-            this.clmResultCount.ReadOnly = true;
-            this.clmResultCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // txtCount
             // 
@@ -154,6 +142,7 @@
             this.clmCalculationName,
             this.clmCalculationCount,
             this.clmCalculationInterval,
+            this.clmCaclulationDelete,
             this.clmCalculationAddResult});
             this.dgvCalculations.Location = new System.Drawing.Point(12, 91);
             this.dgvCalculations.MultiSelect = false;
@@ -197,6 +186,16 @@
             this.clmCalculationInterval.ReadOnly = true;
             this.clmCalculationInterval.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // clmCaclulationDelete
+            // 
+            this.clmCaclulationDelete.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.clmCaclulationDelete.HeaderText = "Delete";
+            this.clmCaclulationDelete.Name = "clmCaclulationDelete";
+            this.clmCaclulationDelete.ReadOnly = true;
+            this.clmCaclulationDelete.Text = "X";
+            this.clmCaclulationDelete.UseColumnTextForButtonValue = true;
+            this.clmCaclulationDelete.Width = 44;
+            // 
             // clmCalculationAddResult
             // 
             this.clmCalculationAddResult.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
@@ -237,11 +236,71 @@
             this.btnLoadItemsFromFile.UseVisualStyleBackColor = true;
             this.btnLoadItemsFromFile.Click += new System.EventHandler(this.btnLoadItemsFromFile_Click);
             // 
+            // dataGridViewTextImageColumn1
+            // 
+            this.dataGridViewTextImageColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextImageColumn1.HeaderText = "Name";
+            this.dataGridViewTextImageColumn1.Image = null;
+            this.dataGridViewTextImageColumn1.Name = "dataGridViewTextImageColumn1";
+            this.dataGridViewTextImageColumn1.ReadOnly = true;
+            this.dataGridViewTextImageColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn1.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "Count";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextImageColumn2
+            // 
+            this.dataGridViewTextImageColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextImageColumn2.HeaderText = "Name";
+            this.dataGridViewTextImageColumn2.Image = null;
+            this.dataGridViewTextImageColumn2.Name = "dataGridViewTextImageColumn2";
+            this.dataGridViewTextImageColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn2.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Count";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn3.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn3.HeaderText = "Interval";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clmResultName
+            // 
+            this.clmResultName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmResultName.HeaderText = "Name";
+            this.clmResultName.Image = null;
+            this.clmResultName.Name = "clmResultName";
+            this.clmResultName.ReadOnly = true;
+            this.clmResultName.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // clmResultCount
+            // 
+            this.clmResultCount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.clmResultCount.FillWeight = 60F;
+            this.clmResultCount.HeaderText = "Count";
+            this.clmResultCount.Name = "clmResultCount";
+            this.clmResultCount.ReadOnly = true;
+            this.clmResultCount.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // RoiCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(595, 254);
+            this.ClientSize = new System.Drawing.Size(526, 254);
             this.Controls.Add(this.btnLoadItemsFromFile);
             this.Controls.Add(this.btnClearResult);
             this.Controls.Add(this.btnCalc);
@@ -266,8 +325,6 @@
 
         private ImageComboBox.CImageComboBox cmbItems;
         private System.Windows.Forms.DataGridView dgvResults;
-        private ImbaControls.DataGridViewTextImageColumn clmResultName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clmResultCount;
         private System.Windows.Forms.TextBox txtCount;
         private System.Windows.Forms.TextBox txtInterval;
         private System.Windows.Forms.Label label1;
@@ -275,12 +332,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DataGridView dgvCalculations;
         private System.Windows.Forms.Button btnCalc;
+        private System.Windows.Forms.Button btnClearResult;
+        private System.Windows.Forms.Button btnLoadItemsFromFile;
         private ImbaControls.DataGridViewTextImageColumn clmCalculationName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCalculationCount;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCalculationInterval;
+        private System.Windows.Forms.DataGridViewButtonColumn clmCaclulationDelete;
         private System.Windows.Forms.DataGridViewButtonColumn clmCalculationAddResult;
-        private System.Windows.Forms.Button btnClearResult;
-        private System.Windows.Forms.Button btnLoadItemsFromFile;
+        private ImbaControls.DataGridViewTextImageColumn dataGridViewTextImageColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private ImbaControls.DataGridViewTextImageColumn dataGridViewTextImageColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private ImbaControls.DataGridViewTextImageColumn clmResultName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clmResultCount;
     }
 }
 
