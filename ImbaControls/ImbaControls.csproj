@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{ED13679F-37EE-4A01-8652-9E63785CB3D7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImbaControls</RootNamespace>
+    <AssemblyName>ImbaControls</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug %28x64%29|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug %28x64%29\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'DebugRunService|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\DebugRunService\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.mshtml, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Input.Manipulations" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FpmReceiptConfig\FpmReceiptConfig.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="FpmReceiptConfig\FpmReceiptConfig.Designer.cs">
+      <DependentUpon>FpmReceiptConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Calendar\Calendar.cs" />
+    <Compile Include="ImageButton\ImageButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumPad\IIncrementableValue.cs" />
+    <Compile Include="NumPad\CurrencyBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GridView\DataGridViewProgressCell.cs" />
+    <Compile Include="GridView\GridView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumPad\IpLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DropDownButton\ClickedEventArgs.cs" />
+    <Compile Include="DropDownButton\ItemClickedEventArgs.cs" />
+    <Compile Include="DropDownButton\Direction.cs" />
+    <Compile Include="DropDownButton\ImbaDropDownButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DropDownButton\ImbaDropDownButton.Designer.cs">
+      <DependentUpon>ImbaDropDownButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DropDownButton\Item.cs" />
+    <Compile Include="DropDownButton\MainClickedEventArgs.cs" />
+    <Compile Include="DropDownButton\MainChangedEventArgs.cs" />
+    <Compile Include="GridView\DataGridViewProgressColumn.cs" />
+    <Compile Include="GridView\DataGridViewTextImageCell.cs" />
+    <Compile Include="GridView\DataGridViewTextImageColumn.cs" />
+    <Compile Include="NumPad\INumPadValue.cs" />
+    <Compile Include="NumPad\MinMaxChangedEventArgs.cs" />
+    <Compile Include="NumPad\NumPadValue.cs" />
+    <Compile Include="Splitter\Splitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumPad\NumPad.Designer.cs">
+      <DependentUpon>NumPad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NumPad\NumPad.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="IpTextBox\IpResolvedEventArgs.cs" />
+    <Compile Include="IpTextBox\NameResolvedEventArgs.cs" />
+    <Compile Include="IpTextBox\ResolveFailedEventArgs.cs" />
+    <Compile Include="NumPad\NumPadLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumPad\TouchLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="NumPad\ValueChangedEventArgs.cs" />
+    <Compile Include="XmlDoc\XmlDoc.cs" />
+    <Compile Include="SimpleTouchButton\SimpleTouchButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TimedToolTip\TimedToolTip.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IpTextBox\IpTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="IpTextBox\ResolveFinishedEventArgs.cs" />
+    <Compile Include="IpTextBox\ResolveStartedEventArgs.cs" />
+    <Compile Include="NumPad\NumPadEventArgs.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExtensionMethods\ExtensionMethods.csproj">
+      <Project>{3a2325d9-157b-4358-9662-e6d7ee1dc759}</Project>
+      <Name>ExtensionMethods</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FpmReceiptConfig\FpmReceiptConfig.resx">
+      <DependentUpon>FpmReceiptConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DropDownButton\ImbaDropDownButton.resx">
+      <DependentUpon>ImbaDropDownButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NumPad\NumPad.resx">
+      <DependentUpon>NumPad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_left.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arrow_right.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
