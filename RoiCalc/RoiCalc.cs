@@ -286,5 +286,26 @@ namespace RoiCalc
             Results = new ResultCollection();
             UpdateResultView(Results);
         }
+
+        private void btnLoadItemsFromFile_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new OpenFileDialog())
+            {
+                dlg.Multiselect = false;
+                dlg.InitialDirectory = Directory.GetCurrentDirectory();
+                dlg.Filter = @"RoiCalc Items File (*.roic)|*.roic|All files (*.*)|*.*";
+
+                if (dlg.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+                Items = ReadItems(dlg.FileName);
+                Results = null;
+                UpdateResultView(Results);
+                Calculations = new List<Calculation>();
+                UpdateCalculationsView(Calculations);
+            }
+        }
     }
 }

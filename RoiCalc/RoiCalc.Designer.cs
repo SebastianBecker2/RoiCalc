@@ -44,6 +44,7 @@
             this.clmCalculationAddResult = new System.Windows.Forms.DataGridViewButtonColumn();
             this.btnCalc = new System.Windows.Forms.Button();
             this.btnClearResult = new System.Windows.Forms.Button();
+            this.btnLoadItemsFromFile = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalculations)).BeginInit();
             this.SuspendLayout();
@@ -226,11 +227,22 @@
             this.btnClearResult.UseVisualStyleBackColor = true;
             this.btnClearResult.Click += new System.EventHandler(this.btnClearResult_Click);
             // 
+            // btnLoadItemsFromFile
+            // 
+            this.btnLoadItemsFromFile.Location = new System.Drawing.Point(253, 15);
+            this.btnLoadItemsFromFile.Name = "btnLoadItemsFromFile";
+            this.btnLoadItemsFromFile.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadItemsFromFile.TabIndex = 9;
+            this.btnLoadItemsFromFile.Text = "Load Item...";
+            this.btnLoadItemsFromFile.UseVisualStyleBackColor = true;
+            this.btnLoadItemsFromFile.Click += new System.EventHandler(this.btnLoadItemsFromFile_Click);
+            // 
             // RoiCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(595, 254);
+            this.Controls.Add(this.btnLoadItemsFromFile);
             this.Controls.Add(this.btnClearResult);
             this.Controls.Add(this.btnCalc);
             this.Controls.Add(this.dgvCalculations);
@@ -268,6 +280,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clmCalculationInterval;
         private System.Windows.Forms.DataGridViewButtonColumn clmCalculationAddResult;
         private System.Windows.Forms.Button btnClearResult;
+        private System.Windows.Forms.Button btnLoadItemsFromFile;
     }
 }
 
