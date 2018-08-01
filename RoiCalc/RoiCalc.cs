@@ -95,26 +95,32 @@ namespace RoiCalc
 
             foreach (var line in lines)
             {
-                if (line.Count() < 3)
+                if (line.Count() < 4)
                 {
                     continue;
                 }
 
-                if (!int.TryParse(line[1], out int count))
+                if (!int.TryParse(line[0], out int type))
                 {
                     continue;
                 }
 
-                if (!int.TryParse(line[2], out int interval))
+                if (!int.TryParse(line[2], out int count))
+                {
+                    continue;
+                }
+
+                if (!int.TryParse(line[3], out int interval))
                 {
                     continue;
                 }
 
                 var item = new Item()
                 {
-                    Name = line[0],
+                    Name = line[1],
                     Count = count,
                     Interval = interval,
+                    Type = (ItemType)type,
                 };
 
                 try
@@ -124,46 +130,46 @@ namespace RoiCalc
                 }
                 catch (FileNotFoundException) { }
 
-                items.Add(line[0], item);
+                items.Add(line[1], item);
             }
 
             foreach (var line in lines)
             {
-                if (line.Count() < 5)
+                if (line.Count() < 6)
                 {
                     continue;
                 }
 
-                if (!int.TryParse(line[4], out int count))
+                if (!int.TryParse(line[5], out int count))
                 {
                     continue;
                 }
 
-                items[line[0]].AddRequirement(items[line[3]], count);
+                items[line[1]].AddRequirement(items[line[4]], count);
 
-                if (line.Count() < 7)
+                if (line.Count() < 8)
                 {
                     continue;
                 }
 
-                if (!int.TryParse(line[6], out count))
+                if (!int.TryParse(line[7], out count))
                 {
                     continue;
                 }
 
-                items[line[0]].AddRequirement(items[line[5]], count);
+                items[line[1]].AddRequirement(items[line[6]], count);
 
-                if (line.Count() < 9)
+                if (line.Count() < 10)
                 {
                     continue;
                 }
 
-                if (!int.TryParse(line[8], out count))
+                if (!int.TryParse(line[9], out count))
                 {
                     continue;
                 }
 
-                items[line[0]].AddRequirement(items[line[7]], count);
+                items[line[1]].AddRequirement(items[line[8]], count);
             }
 
             return items;
@@ -317,6 +323,7 @@ namespace RoiCalc
                 }
 
                 Items = ReadItems(dlg.FileName);
+                UpdateItemsComboBox(Items);
                 Results = null;
                 UpdateResultView(Results);
                 Calculations = new List<Calculation>();

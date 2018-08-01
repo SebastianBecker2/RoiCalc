@@ -1,0 +1,118 @@
+1; Water; 1; 10
+1; Sand; 1; 10
+1; Wood; 1; 10
+1; Fish; 1; 10
+1; Iron Ore; 1; 10
+1; Coal; 1; 10
+1; Copper; 1; 10
+1; Gas; 1; 10
+1; Oil; 1; 10
+2; Oranges; 2; 40; Water; 3
+2; Apples; 2; 40; Water; 3
+2; Grapes; 2; 40; Water; 3
+2; Raw Rubber; 2; 40; Water; 3
+2; Wheat; 2; 30; Water; 2
+2; Hops; 2; 30; Water; 2
+2; Potato; 2; 30; Water; 2
+2; Vegetables; 2; 30; Water; 2
+2; Berries; 2; 30; Water; 2
+2; Cotton; 2; 30; Water; 2
+2; Sugar; 2; 30; Water; 2
+2; Cocoa; 2; 30; Water; 2
+3; Chicken Meat; 1; 30; Wheat; 2; Water; 1
+3; Egg; 2; 30; Wheat; 2; Water; 1
+3; Beef; 1; 45; Wheat; 3; Water; 2
+3; Leather; 1; 45; Wheat; 3; Water; 2
+3; Milk; 1; 45; Wheat; 3; Water; 2
+3; Mutton; 1; 30; Wheat; 2; Water; 1
+3; Wool; 2; 30; Wheat; 2; Water; 1
+4; Wooden Planks; 3; 35; Wood; 4
+4; Hard Cider; 2; 50; Apples; 4; Sugar; 2
+4; Wine; 2; 40; Grapes; 4
+4; Yeast; 2; 25; Berries; 3; Sugar; 1
+4; Apple Smoothie; 2; 40; Apples; 3; Water; 3
+4; Berry Smoothie; 2; 30; Berries; 3; Water; 3
+4; Grape Juice; 2; 40; Grapes; 3; Water; 2
+4; Orange Juice; 2; 40; Oranges; 3; Water; 2
+4; Soda Water; 3; 35; Sugar; 1; Water; 1
+4; Chocolate Bar; 2; 30; Cocoa; 2; Milk; 1
+4; Flour; 2; 20; Wheat; 3
+4; Copper Tubing; 2; 15; Copper; 5
+4; Copper Wire; 3; 40; Copper; 5
+4; Glass; 3; 25; Sand; 3; Coal; 1
+4; Steel; 3; 35; Iron Ore; 3; Coal; 2
+4; Heavy Pulp; 2; 20; Wood; 5; Water; 2
+4; Ink; 2; 15; Water; 1; Coal; 4
+4; Parchment; 3; 35; Wood; 3; Water; 1
+4; Chemicals; 2; 20; Gas; 5
+4; Plastics; 2; 30; Oil; 5; Gas; 3
+4; Refined Oil; 3; 30; Oil; 3
+4; Rubber; 2; 35; Raw Rubber; 3
+4; Soup; 2; 30; Vegetables; 3; Water; 3
+4; Dye; 2; 25; Berries; 3; Water; 2
+4; Fibers; 2; 20; Cotton; 3
+5; Large Furniture Base; 2; 45; Wooden Planks; 5
+5; Small Furniture Base; 2; 30; Wooden Planks; 4
+5; Wooden Barrels; 2; 25; Wooden Planks; 3
+5; Beer; 2; 45; Hops; 4; Yeast; 2; Wooden Barrels; 1
+5; Biofuel; 2; 20; Potato; 5; Refined Oil; 2
+5; Vodka; 2; 45; Potato; 4; Yeast; 1; Wooden Barrels; 1
+5; Beef Stew; 2; 40; Beef; 3; Vegetables; 1; Water; 1
+5; Cheese; 2; 40; Milk; 2; Water; 3
+5; Chocolate Cake; 2; 45; Flour; 3; Egg; 1; Cocoa; 3
+5; Dough; 2; 40; Flour; 4; Water; 1
+5; Bottles; 2; 20; Glass; 3
+5; Cans; 2; 25; Steel; 3
+5; Ceramic; 2; 45; Glass; 7; Sand; 4
+5; Steel Frame; 2; 45; Steel; 8
+5; Windows; 2; 45; Glass; 7
+5; Steel Barrels; 2; 25; Steel; 3
+5; Alternator; 2; 45; Copper Wire; 3; Steel; 3
+5; Diodes; 2; 45; Copper Wire; 4; Glass; 3
+5; Light Bulbs; 2; 45; Copper Wire; 4; Glass; 2
+5; Radiator; 2; 45; Copper Tubing; 3; Steel; 3
+5; Refrigerator; 2; 45; Copper Tubing; 4; Steel; 2; Gas; 2
+5; Stovetop; 2; 45; Copper Tubing; 4; Steel; 2
+5; Cardboard; 2; 45; Heavy Pulp; 5
+5; Cardboard Panels; 2; 45; Heavy Pulp; 4
+5; Printed Paper; 2; 45; Parchment; 4; Ink; 2
+5; Adhesive; 2; 45; Chemicals; 1; Plastics; 3
+5; Paints; 2; 45; Chemicals; 2; Dye; 3
+5; Rubber Tubes; 2; 45; Rubber; 3
+5; Tire; 2; 45; Rubber; 4
+5; Bag of Chips; 2; 20; Potato; 3; Parchment; 2
+5; Canned Fish; 2; 45; Fish; 3; Cans; 1
+5; Canned Mutton; 2; 45; Mutton; 3; Cans; 1
+5; Chicken Soup; 2; 45; Chicken Meat; 7; Water; 3; Vegetables; 3
+5; Heavy Fabric; 2; 45; Fibers; 2; Dye; 1; Leather; 2
+5; Light Fabric; 2; 45; Fibers; 3; Dye; 1
+6; Car Seat; 1; 30; Small Furniture Base; 8; Cotton; 7
+6; Leather Furniture; 1; 30; Small Furniture Base; 5; Leather; 8
+6; Office Furniture; 1; 30; Large Furniture Base; 5; Steel; 5
+6; Plastic Furniture; 1; 30; Small Furniture Base; 5; Plastics; 6
+6; Brandy; 1; 30; Wine; 7; Bottles; 3
+6; Barley Wiskey; 1; 30; Wheat; 9; Wooden Barrels; 6; Yeast; 6
+6; Orange Soda; 1; 30; Soda Water; 6; Orange Juice; 3; Bottles; 1
+6; Waffles; 1; 30; Dough; 6; Sugar; 4
+6; Berry Pie; 1; 30; Berries; 9; Dough; 6
+6; Burgers; 1; 30; Dough; 6; Vegetables; 3; Beef; 3
+6; Pizza; 1; 30; Cheese; 6; Dough; 3; Vegetables; 3
+6; Car Radiator; 1; 30; Radiator; 2; Steel; 2
+6; Headlights; 1; 30; Light Bulbs; 2; Glass; 2
+6; Oven; 1; 30; Stovetop; 2; Ceramic; 2
+6; Radio Reciever; 1; 30; Diodes; 4; Small Furniture Base; 2
+6; Telephones; 1; 30; Diodes; 3; Plastics; 5
+6; Books; 1; 30; Printed Paper; 5
+6; Deluxe Books; 1; 30; Printed Paper; 5; Leather; 2
+6; Newspapers; 1; 30; Printed Paper; 5; Ink; 2
+6; Interior Lining; 1; 30; Heavy Fabric; 2; Cardboard Panels; 2
+6; Summer Clothes; 1; 30; Light Fabric; 2; Dye; 2
+6; Winter Clothes; 1; 30; Heavy Fabric; 2; Wool; 2
+6; Work Clothes; 1; 30; Heavy Fabric; 2; Leather; 2
+7; Axles; 1; 60; Steel Frame; 3; Tire; 9; Steel; 3
+7; Body Chassis; 1; 75; Interior Body; 3; Exterior Body; 3; Adhesive; 9
+7; Combustion Engine; 1; 60; Biofuel; 9; Alternator; 3; Car Radiator; 3
+7; Exterior Body; 1; 60; Windows; 6; Headlights; 2; Paints; 3
+7; Interior Body; 1; 60; Radio Reciever; 3; Interior Lining; 6; Car Seat; 6
+7; Rolling Chassi; 1; 75; Axles; 3; Combustion Engine; 3; Adhesive; 9
+7; Car; 1; 360; Body Chassis; 3; Rolling Chassi; 3

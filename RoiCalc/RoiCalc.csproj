@@ -49,6 +49,7 @@
     <Compile Include="DataGridViewTextImage\DataGridViewTextImageCell.cs" />
     <Compile Include="DataGridViewTextImage\DataGridViewTextImageColumn.cs" />
     <Compile Include="Item.cs" />
+    <Compile Include="ItemType.cs" />
     <Compile Include="ResultCollection.cs" />
     <Compile Include="RoiCalc.cs">
       <SubType>Form</SubType>
@@ -80,6 +81,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Resources\items %286.2 build 2307b%29.roic">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\items.roic">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

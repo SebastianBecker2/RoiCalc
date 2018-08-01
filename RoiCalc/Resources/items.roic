@@ -1,79 +1,79 @@
-Water, 1, 10
-Wheat, 2, 30, Water, 2
-Veggies, 2, 30, Water, 2
-Flour, 2, 20, Wheat, 3
-Dough, 2, 40, Flour, 4, Water, 1
-Milk, 1, 45, Water, 2, Wheat, 3
-Cheese, 2, 40, Milk, 2, Water, 3
-Pizza, 1, 30, Dough, 6, Cheese, 3, Veggies, 3
-Beer, 2, 45, Wooden Barrels, 1, Hops, 4, Yeast, 2
-Wooden Barrels, 2, 25, Wooden Planks, 3
-Wooden Planks, 3, 35, Wood, 4
-Wood, 1, 10
-Hops, 2, 30, Water, 2
-Yeast, 2, 25, Berries, 3, Sugar, 1
-Berries, 2, 30, Water, 2
-Sugar, 2, 30, Water, 2
-Biofuel, 2, 20, Potato, 5, Refined Oil, 2
-Potato, 2, 30, Water, 2
-Refined Oil, 3, 30, Oil, 3
-Oil, 1, 10
-Brandy, 1, 30, Wine, 7, Bottles, 3
-Wine, 2, 40, Grapes, 4
-Grapes, 2, 40, Water, 3
-Bottles, 2, 20, Glass, 3
-Glass, 3, 25, Sand, 3, Coal, 1
-Sand, 1, 10
-Coal, 1, 10
-Hard Cider, 2, 50, Apples, 4, Sugar, 2
-Apples, 2, 40, Water, 3
-Vodka, 2, 45, Potato, 4, Yeast, 1, Wooden Barrels, 1
-Barely Whiskey, 1, 30, Wheat, 9, Wooden Barrels, 6, Yeast, 6
-Car Seat, 1, 30, Furniture Base (S), 8, Cotton, 7
-Furniture Base (L), 2, 45, Wooden Planks, 5
-Furniture Base (S), 2, 30, Wooden Planks, 4
-Leather Furniture, 1, 30, Furniture Base (S), 5, Leather, 8
-Leather, 1, 45, Water, 2, Wheat, 3
-Office Furniture, 1, 30, Furniture Base (L), 5, Steel, 5
-Steel, 3, 35, Iron Ore, 3, Coal, 2
-Iron Ore, 1, 10
-Plastic Furniture, 1, 30, Furniture Base (S), 5, Plastic, 6
-Apple Smoothie, 2, 40, Apples, 3, Water, 3
-Berry Smoothie, 2, 30, Berries, 3, Water, 3
-Grape Juice, 2, 40, Grapes, 3, Water, 2
-Orange Juice, 2, 40, Oranges, 3, Water, 2
-Oranges, 2, 40, Water, 3
-Orange Soda, 1, 30, Soda Water, 6, Orange Juice, 3, Bottles, 1
-Soda Water, 3, 35, Sugar, 1, Water, 1
-Beef, 1, 45, Water, 2, Wheat, 3
-Beef Stew, 2, 40, Beef, 3, Veggies, 1, Water, 1
-Berry Pie, 1, 30, Berries, 9, Dough, 6
-Burgers, 1, 30, Dough, 6, Beef, 3, Veggies, 3
-Chocolate Bar, 2, 30, Cocoa, 2, Milk, 1
-Cocoa, 2, 30, Water, 2
-Chocolate Cake, 2, 45, Flour, 3, Eggs, 1, Cocoa, 3
-Eggs, 2, 30, Water, 1, Wheat, 2
-Chicken Meat, 1, 30, Water, 1, Wheat, 2
-Waffels, 1, 30, Sugar, 4, Dough, 6
-Cans, 2, 25, Steel, 3
-Ceramics, 2, 45, Glass, 7, Sand, 4
-Copper Tubing, 2, 15, Copper, 5
-Copper, 1, 10
-Copper Wire, 3, 40, Copper, 5
-Steel Barrels, 2, 25, Steel, 3
-Steel Frame, 2, 45, Steel, 8
-Windows, 2, 45, Glass, 7
-Alternator, 2, 45, Copper Wire, 3, Steel, 3
-Car Radiator, 1, 30, Radiator, 2, Steel, 2
-Radiator, 2, 45, Steel, 3, Copper Tubing, 3
-Diodes, 2, 45, Copper Wire, 4, Glass, 3
-Headlights, 1, 30, Light Bulbs, 2, Glass, 2
-Light Bulbs, 2, 45, Copper Wire, 4, Glass, 2
-Oven, 1, 30, Stovetop, 2, Ceramics, 2
-Stovetop, 2, 45, Steel, 4, Copper Tubing, 2
-Radio Receiver, 1, 30, Diodes, 4, Furniture Base (S), 2
-Refridgerator, 2, 45, Copper Tubing, 4, Steel, 2, Gas, 2
-Gas, 1, 10
-Telephone, 1, 30, Diodes, 3, Plastic, 5
-Cotton, 2, 30, Water, 2
-Plastic, 2, 30, Oil, 5, Gas, 3
+1, Water, 1, 10
+1, Wheat, 2, 30, Water, 2
+1, Veggies, 2, 30, Water, 2
+1, Flour, 2, 20, Wheat, 3
+1, Dough, 2, 40, Flour, 4, Water, 1
+1, Milk, 1, 45, Water, 2, Wheat, 3
+1, Cheese, 2, 40, Milk, 2, Water, 3
+1, Pizza, 1, 30, Dough, 6, Cheese, 3, Veggies, 3
+1, Beer, 2, 45, Wooden Barrels, 1, Hops, 4, Yeast, 2
+1, Wooden Barrels, 2, 25, Wooden Planks, 3
+1, Wooden Planks, 3, 35, Wood, 4
+1, Wood, 1, 10
+1, Hops, 2, 30, Water, 2
+1, Yeast, 2, 25, Berries, 3, Sugar, 1
+1, Berries, 2, 30, Water, 2
+1, Sugar, 2, 30, Water, 2
+1, Biofuel, 2, 20, Potato, 5, Refined Oil, 2
+1, Potato, 2, 30, Water, 2
+1, Refined Oil, 3, 30, Oil, 3
+1, Oil, 1, 10
+1, Brandy, 1, 30, Wine, 7, Bottles, 3
+1, Wine, 2, 40, Grapes, 4
+1, Grapes, 2, 40, Water, 3
+1, Bottles, 2, 20, Glass, 3
+1, Glass, 3, 25, Sand, 3, Coal, 1
+1, Sand, 1, 10
+1, Coal, 1, 10
+1, Hard Cider, 2, 50, Apples, 4, Sugar, 2
+1, Apples, 2, 40, Water, 3
+1, Vodka, 2, 45, Potato, 4, Yeast, 1, Wooden Barrels, 1
+1, Barely Whiskey, 1, 30, Wheat, 9, Wooden Barrels, 6, Yeast, 6
+1, Car Seat, 1, 30, Furniture Base (S), 8, Cotton, 7
+1, Furniture Base (L), 2, 45, Wooden Planks, 5
+1, Furniture Base (S), 2, 30, Wooden Planks, 4
+1, Leather Furniture, 1, 30, Furniture Base (S), 5, Leather, 8
+1, Leather, 1, 45, Water, 2, Wheat, 3
+1, Office Furniture, 1, 30, Furniture Base (L), 5, Steel, 5
+1, Steel, 3, 35, Iron Ore, 3, Coal, 2
+1, Iron Ore, 1, 10
+1, Plastic Furniture, 1, 30, Furniture Base (S), 5, Plastic, 6
+1, Apple Smoothie, 2, 40, Apples, 3, Water, 3
+1, Berry Smoothie, 2, 30, Berries, 3, Water, 3
+1, Grape Juice, 2, 40, Grapes, 3, Water, 2
+1, Orange Juice, 2, 40, Oranges, 3, Water, 2
+1, Oranges, 2, 40, Water, 3
+1, Orange Soda, 1, 30, Soda Water, 6, Orange Juice, 3, Bottles, 1
+1, Soda Water, 3, 35, Sugar, 1, Water, 1
+1, Beef, 1, 45, Water, 2, Wheat, 3
+1, Beef Stew, 2, 40, Beef, 3, Veggies, 1, Water, 1
+1, Berry Pie, 1, 30, Berries, 9, Dough, 6
+1, Burgers, 1, 30, Dough, 6, Beef, 3, Veggies, 3
+1, Chocolate Bar, 2, 30, Cocoa, 2, Milk, 1
+1, Cocoa, 2, 30, Water, 2
+1, Chocolate Cake, 2, 45, Flour, 3, Eggs, 1, Cocoa, 3
+1, Eggs, 2, 30, Water, 1, Wheat, 2
+1, Chicken Meat, 1, 30, Water, 1, Wheat, 2
+1, Waffels, 1, 30, Sugar, 4, Dough, 6
+1, Cans, 2, 25, Steel, 3
+1, Ceramics, 2, 45, Glass, 7, Sand, 4
+1, Copper Tubing, 2, 15, Copper, 5
+1, Copper, 1, 10
+1, Copper Wire, 3, 40, Copper, 5
+1, Steel Barrels, 2, 25, Steel, 3
+1, Steel Frame, 2, 45, Steel, 8
+1, Windows, 2, 45, Glass, 7
+1, Alternator, 2, 45, Copper Wire, 3, Steel, 3
+1, Car Radiator, 1, 30, Radiator, 2, Steel, 2
+1, Radiator, 2, 45, Steel, 3, Copper Tubing, 3
+1, Diodes, 2, 45, Copper Wire, 4, Glass, 3
+1, Headlights, 1, 30, Light Bulbs, 2, Glass, 2
+1, Light Bulbs, 2, 45, Copper Wire, 4, Glass, 2
+1, Oven, 1, 30, Stovetop, 2, Ceramics, 2
+1, Stovetop, 2, 45, Steel, 4, Copper Tubing, 2
+1, Radio Receiver, 1, 30, Diodes, 4, Furniture Base (S), 2
+1, Refridgerator, 2, 45, Copper Tubing, 4, Steel, 2, Gas, 2
+1, Gas, 1, 10
+1, Telephone, 1, 30, Diodes, 3, Plastic, 5
+1, Cotton, 2, 30, Water, 2
+1, Plastic, 2, 30, Oil, 5, Gas, 3

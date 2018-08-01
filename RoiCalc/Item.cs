@@ -9,6 +9,7 @@ namespace RoiCalc
 {
     class Item
     {
+        public ItemType Type { get; set; }
         public int Count { get; set; }
         public int Interval { get; set; }
         public string Name { get; set; }
