@@ -25,13 +25,32 @@ namespace RoiCalc
         private IList<Calculation> Calculations { get; set; }
             = new List<Calculation>();
 
+        private Item SelectedItem
+        {
+            get { return selected_item; }
+            set
+            {
+                selected_item = value;
+                if (selected_item == null)
+                {
+                    lblItemName.Text = "Select an item";
+                    return;
+                } else
+                {
+                    lblItemName.Text = selected_item.Name;
+                }
+                pibItemImage.Image = selected_item?.Image;
+            }
+        }
+        private Item selected_item;
+
 
         public RoiCalc()
         {
             InitializeComponent();
             Items = ReadItems(Path.Combine(Directory.GetCurrentDirectory(), "Resources", ItemsFileName));
-            UpdateItemsComboBox(Items);
             dgvCalculations.CellContentClick += OnDgvCalculationsCellContentClick;
+            SelectedItem = Items.FirstOrDefault().Value;
         }
 
         private void OnDgvCalculationsCellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -60,30 +79,7 @@ namespace RoiCalc
                 UpdateResultView(Results);
             }
         }
-
-        private void UpdateItemsComboBox(IDictionary<string, Item> items)
-        {
-            cmbItems.Items.Clear();
-            var image_list = new ImageList();
-
-            foreach (var item in items.Values)
-            {
-                if (item.Image != null)
-                {
-                    var image_index = image_list.Images.Count;
-                    image_list.Images.Add(item.Image);
-                    cmbItems.Items.Add(new ImageComboBoxItem(image_index, item.Name, 0));
-                }
-                else
-                {
-                    cmbItems.Items.Add(new ImageComboBoxItem(item.Name, 0));
-                }
-            }
-
-            cmbItems.ImageList = image_list;
-            cmbItems.SelectedIndex = 0;
-        }
-
+        
         private IDictionary<string, Item> ReadItems(string path)
         {
             var res_path = Path.GetDirectoryName(path);
@@ -276,7 +272,7 @@ namespace RoiCalc
 
         private void btnCalc_Click(object sender, EventArgs e)
         {
-            if (!Items.TryGetValue(cmbItems.Text, out Item item))
+            if (SelectedItem == null)
             {
                 return;
             }
@@ -291,11 +287,11 @@ namespace RoiCalc
                 return;
             }
 
-            Results = CalculateResults(item, count, interval);
+            Results = CalculateResults(SelectedItem, count, interval);
             UpdateResultView(Results);
             Calculations.Add(new Calculation()
             {
-                Item = item,
+                Item = SelectedItem,
                 Count = count,
                 Interval = interval,
                 Results = Results
@@ -323,11 +319,25 @@ namespace RoiCalc
                 }
 
                 Items = ReadItems(dlg.FileName);
-                UpdateItemsComboBox(Items);
                 Results = null;
                 UpdateResultView(Results);
                 Calculations = new List<Calculation>();
                 UpdateCalculationsView(Calculations);
+            }
+        }
+
+        private void cmbSelectItem_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new ItemSelectionDialog())
+            {
+                dlg.Items = Items.Values;
+
+                if (dlg.ShowDialog() != DialogResult.OK)
+                {
+                    return;
+                }
+
+                SelectedItem = dlg.SelectedItem;
             }
         }
     }

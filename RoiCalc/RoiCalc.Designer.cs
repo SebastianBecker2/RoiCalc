@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.cmbItems = new ImageComboBox.CImageComboBox();
             this.dgvResults = new System.Windows.Forms.DataGridView();
             this.clmResultName = new ImbaControls.DataGridViewTextImageColumn();
             this.clmResultCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,22 +50,13 @@
             this.dataGridViewTextImageColumn2 = new ImbaControls.DataGridViewTextImageColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cmbSelectItem = new System.Windows.Forms.Button();
+            this.pibItemImage = new System.Windows.Forms.PictureBox();
+            this.lblItemName = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalculations)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pibItemImage)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cmbItems
-            // 
-            this.cmbItems.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbItems.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbItems.FormattingEnabled = true;
-            this.cmbItems.ImageList = null;
-            this.cmbItems.Indent = 0;
-            this.cmbItems.ItemHeight = 15;
-            this.cmbItems.Location = new System.Drawing.Point(64, 12);
-            this.cmbItems.Name = "cmbItems";
-            this.cmbItems.Size = new System.Drawing.Size(121, 21);
-            this.cmbItems.TabIndex = 0;
             // 
             // dgvResults
             // 
@@ -162,7 +152,7 @@
             this.clmCalculationInterval,
             this.clmCaclulationDelete,
             this.clmCalculationAddResult});
-            this.dgvCalculations.Location = new System.Drawing.Point(12, 91);
+            this.dgvCalculations.Location = new System.Drawing.Point(12, 104);
             this.dgvCalculations.MultiSelect = false;
             this.dgvCalculations.Name = "dgvCalculations";
             this.dgvCalculations.ReadOnly = true;
@@ -173,7 +163,7 @@
             this.dgvCalculations.ShowCellToolTips = false;
             this.dgvCalculations.ShowEditingIcon = false;
             this.dgvCalculations.ShowRowErrors = false;
-            this.dgvCalculations.Size = new System.Drawing.Size(316, 153);
+            this.dgvCalculations.Size = new System.Drawing.Size(316, 140);
             this.dgvCalculations.TabIndex = 7;
             this.dgvCalculations.TabStop = false;
             // 
@@ -226,7 +216,7 @@
             // 
             // btnCalc
             // 
-            this.btnCalc.Location = new System.Drawing.Point(196, 62);
+            this.btnCalc.Location = new System.Drawing.Point(196, 75);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(54, 23);
             this.btnCalc.TabIndex = 3;
@@ -236,7 +226,7 @@
             // 
             // btnClearResult
             // 
-            this.btnClearResult.Location = new System.Drawing.Point(256, 62);
+            this.btnClearResult.Location = new System.Drawing.Point(256, 75);
             this.btnClearResult.Name = "btnClearResult";
             this.btnClearResult.Size = new System.Drawing.Size(72, 23);
             this.btnClearResult.TabIndex = 8;
@@ -246,7 +236,7 @@
             // 
             // btnLoadItemsFromFile
             // 
-            this.btnLoadItemsFromFile.Location = new System.Drawing.Point(244, 15);
+            this.btnLoadItemsFromFile.Location = new System.Drawing.Point(244, 46);
             this.btnLoadItemsFromFile.Name = "btnLoadItemsFromFile";
             this.btnLoadItemsFromFile.Size = new System.Drawing.Size(84, 23);
             this.btnLoadItemsFromFile.TabIndex = 9;
@@ -296,11 +286,41 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
+            // cmbSelectItem
+            // 
+            this.cmbSelectItem.Location = new System.Drawing.Point(244, 17);
+            this.cmbSelectItem.Name = "cmbSelectItem";
+            this.cmbSelectItem.Size = new System.Drawing.Size(84, 23);
+            this.cmbSelectItem.TabIndex = 10;
+            this.cmbSelectItem.Text = "Select Item...";
+            this.cmbSelectItem.UseVisualStyleBackColor = true;
+            this.cmbSelectItem.Click += new System.EventHandler(this.cmbSelectItem_Click);
+            // 
+            // pibItemImage
+            // 
+            this.pibItemImage.Location = new System.Drawing.Point(64, 12);
+            this.pibItemImage.Name = "pibItemImage";
+            this.pibItemImage.Size = new System.Drawing.Size(20, 20);
+            this.pibItemImage.TabIndex = 11;
+            this.pibItemImage.TabStop = false;
+            // 
+            // lblItemName
+            // 
+            this.lblItemName.AutoSize = true;
+            this.lblItemName.Location = new System.Drawing.Point(91, 14);
+            this.lblItemName.Name = "lblItemName";
+            this.lblItemName.Size = new System.Drawing.Size(86, 13);
+            this.lblItemName.TabIndex = 12;
+            this.lblItemName.Text = "[Item name here]";
+            // 
             // RoiCalc
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 254);
+            this.Controls.Add(this.lblItemName);
+            this.Controls.Add(this.pibItemImage);
+            this.Controls.Add(this.cmbSelectItem);
             this.Controls.Add(this.btnLoadItemsFromFile);
             this.Controls.Add(this.btnClearResult);
             this.Controls.Add(this.btnCalc);
@@ -311,19 +331,17 @@
             this.Controls.Add(this.txtInterval);
             this.Controls.Add(this.txtCount);
             this.Controls.Add(this.dgvResults);
-            this.Controls.Add(this.cmbItems);
             this.Name = "RoiCalc";
             this.Text = "RoiCalc";
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalculations)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pibItemImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private ImageComboBox.CImageComboBox cmbItems;
         private System.Windows.Forms.DataGridView dgvResults;
         private System.Windows.Forms.TextBox txtCount;
         private System.Windows.Forms.TextBox txtInterval;
@@ -346,6 +364,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private ImbaControls.DataGridViewTextImageColumn clmResultName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmResultCount;
+        private System.Windows.Forms.Button cmbSelectItem;
+        private System.Windows.Forms.PictureBox pibItemImage;
+        private System.Windows.Forms.Label lblItemName;
     }
 }
 
