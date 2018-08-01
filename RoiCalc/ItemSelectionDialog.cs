@@ -13,7 +13,7 @@ namespace RoiCalc
 {
     partial class ItemSelectionDialog : Form
     {
-        public ICollection<Item> Items { get; set; }
+        public IEnumerable<Item> Items { get; set; }
         public Item SelectedItem { get; set; }
 
         public ItemSelectionDialog()
@@ -30,7 +30,7 @@ namespace RoiCalc
             base.OnLoad(e);
         }
 
-        private void UpdateItemList(ICollection<Item> items)
+        private void UpdateItemList(IEnumerable<Item> items)
         {
             dgvItems.Rows.Clear();
 
@@ -54,17 +54,32 @@ namespace RoiCalc
 
                 dgvItems.Rows.Add(row);
             }
+
+            dgvItems.ClearSelection();
         }
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (dgvItems.SelectedRows.Count == 0)
+            if (dgvItems.SelectedRows.Count >= 1)
             {
-                return;
+                SelectedItem = dgvItems.SelectedRows[0].Cells[0].Tag as Item;
+                DialogResult = DialogResult.OK;
             }
 
-            SelectedItem = dgvItems.SelectedRows[0].Cells[0].Tag as Item;
-            DialogResult = DialogResult.OK;
+            if (dgvItems.Rows.Count == 1)
+            {
+                SelectedItem = dgvItems.Rows[0].Cells[0].Tag as Item;
+                DialogResult = DialogResult.OK;
+            }
+        }
+
+        private void txtFilter_TextChanged(object sender, EventArgs e)
+        {
+            var items = Items.Where(i =>
+                string.IsNullOrWhiteSpace(txtFilter.Text) ||
+                i.Name.ToLower().StartsWith(txtFilter.Text.ToLower()));
+
+            UpdateItemList(items);
         }
     }
 }
