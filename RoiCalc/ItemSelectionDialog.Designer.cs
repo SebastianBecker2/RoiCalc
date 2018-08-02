@@ -36,6 +36,7 @@
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.recipeView1 = new RoiCalc.RecipeView();
+            this.cmbFilter = new CheckComboBoxTest.CheckedComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -51,7 +52,7 @@
             this.dgvItems.ColumnHeadersVisible = false;
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmItemName});
-            this.dgvItems.Location = new System.Drawing.Point(12, 38);
+            this.dgvItems.Location = new System.Drawing.Point(12, 65);
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.RowHeadersVisible = false;
@@ -59,7 +60,7 @@
             this.dgvItems.ShowCellErrors = false;
             this.dgvItems.ShowCellToolTips = false;
             this.dgvItems.ShowEditingIcon = false;
-            this.dgvItems.Size = new System.Drawing.Size(201, 257);
+            this.dgvItems.Size = new System.Drawing.Size(201, 298);
             this.dgvItems.TabIndex = 2;
             // 
             // clmItemName
@@ -73,7 +74,7 @@
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(377, 271);
+            this.btnOk.Location = new System.Drawing.Point(377, 339);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 3;
@@ -85,7 +86,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(458, 271);
+            this.btnCancel.Location = new System.Drawing.Point(458, 339);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;
@@ -106,7 +107,6 @@
             this.txtFilter.Name = "txtFilter";
             this.txtFilter.Size = new System.Drawing.Size(163, 20);
             this.txtFilter.TabIndex = 1;
-            this.txtFilter.TextChanged += new System.EventHandler(this.txtFilter_TextChanged);
             // 
             // label2
             // 
@@ -125,8 +125,24 @@
             this.recipeView1.Location = new System.Drawing.Point(219, 12);
             this.recipeView1.MinimumSize = new System.Drawing.Size(316, 255);
             this.recipeView1.Name = "recipeView1";
-            this.recipeView1.Size = new System.Drawing.Size(316, 255);
+            this.recipeView1.Size = new System.Drawing.Size(316, 323);
             this.recipeView1.TabIndex = 5;
+            // 
+            // cmbFilter
+            // 
+            this.cmbFilter.CheckOnClick = true;
+            this.cmbFilter.DisplayMember = "Name";
+            this.cmbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cmbFilter.DropDownHeight = 1;
+            this.cmbFilter.DropDownWidth = 50;
+            this.cmbFilter.FormattingEnabled = true;
+            this.cmbFilter.IntegralHeight = false;
+            this.cmbFilter.Location = new System.Drawing.Point(12, 38);
+            this.cmbFilter.MaxDropDownItems = 10;
+            this.cmbFilter.Name = "cmbFilter";
+            this.cmbFilter.Size = new System.Drawing.Size(201, 21);
+            this.cmbFilter.TabIndex = 6;
+            this.cmbFilter.ValueSeparator = ", ";
             // 
             // ItemSelectionDialog
             // 
@@ -134,7 +150,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(545, 306);
+            this.ClientSize = new System.Drawing.Size(545, 374);
+            this.Controls.Add(this.cmbFilter);
             this.Controls.Add(this.recipeView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtFilter);
@@ -161,5 +178,6 @@
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Label label2;
         private RecipeView recipeView1;
+        private CheckComboBoxTest.CheckedComboBox cmbFilter;
     }
 }

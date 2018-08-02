@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 
 namespace RoiCalc
@@ -36,6 +37,30 @@ namespace RoiCalc
                     return Color.MediumOrchid;
                 default:
                     throw new InvalidOperationException("The value of argument " + 
+                        nameof(type) + " is invalid");
+            }
+        }
+
+        public static string ToPrettyString(this ItemType type)
+        {
+            switch (type)
+            {
+                case ItemType.Resource:
+                    return "Resource";
+                case ItemType.Plantation:
+                    return "Plantation";
+                case ItemType.Livestock:
+                    return "Livestock";
+                case ItemType.Tier1:
+                    return "Tier 1";
+                case ItemType.Tier2:
+                    return "Tier 2";
+                case ItemType.Tier3:
+                    return "Tier 3";
+                case ItemType.CarPart:
+                    return "Car Part";
+                default:
+                    throw new InvalidOperationException("The value of argument " +
                         nameof(type) + " is invalid");
             }
         }

@@ -1,4 +1,5 @@
-﻿using ImbaControls;
+﻿using CheckComboBoxTest;
+using ImbaControls;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -27,8 +28,40 @@ namespace RoiCalc
         {
             InitializeComponent();
 
+            foreach (ItemType type in Enum.GetValues(typeof(ItemType)))
+            {
+                cmbFilter.Items.Add(new CCBoxItem(type.ToPrettyString(), 0));
+                cmbFilter.SetItemChecked((int)type - 1, true);
+            }
+            cmbFilter.ItemCheck += (s, e) => FilterChanged(GetSelectedTypeFilterIndices(e));
+            txtFilter.TextChanged += (s, e) => FilterChanged(GetSelectedTypeFilterIndices(null));
+
             dgvItems.DoubleClick += btnOk_Click;
             dgvItems.SelectionChanged += DgvItems_SelectionChanged;
+        }
+
+        private IEnumerable<int> GetSelectedTypeFilterIndices(ItemCheckEventArgs e = null)
+        {
+            for (int i = 0; i < cmbFilter.Items.Count; i++)
+            {
+                if (e?.Index == i)
+                {
+                    if (e.NewValue == CheckState.Checked)
+                    {
+                        yield return i;
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
+
+                if (!cmbFilter.GetItemChecked(i))
+                {
+                    continue;
+                }
+                yield return i;
+            }
         }
 
         private void DgvItems_SelectionChanged(object sender, EventArgs e)
@@ -107,11 +140,20 @@ namespace RoiCalc
             }
         }
 
-        private void txtFilter_TextChanged(object sender, EventArgs e)
+        private void FilterChanged(IEnumerable<int> filtered_types)
         {
-            var items = Items.Where(i =>
-                string.IsNullOrWhiteSpace(txtFilter.Text) ||
-                i.Name.ToLower().StartsWith(txtFilter.Text.ToLower()));
+            var items = Items;
+
+            if (!string.IsNullOrWhiteSpace(txtFilter.Text))
+            {
+                items = items.Where(i =>
+                    i.Name.ToLower().StartsWith(txtFilter.Text.ToLower()));
+            }
+
+            if (filtered_types != null)
+            {
+                items = items.Where(i => filtered_types.Contains((int)i.Type - 1));
+            }
 
             UpdateItemList(items, SelectedItem);
         }

@@ -52,6 +52,10 @@
       <DependentUpon>AboutDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Calculation.cs" />
+    <Compile Include="CheckedComboBox\CCBoxItem.cs" />
+    <Compile Include="CheckedComboBox\CheckedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DataGridViewTextImage\DataGridViewTextImageCell.cs" />
     <Compile Include="DataGridViewTextImage\DataGridViewTextImageColumn.cs" />
     <Compile Include="Item.cs" />
@@ -124,5 +128,6 @@
   <ItemGroup>
     <Content Include="Resources\timer-clock.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
