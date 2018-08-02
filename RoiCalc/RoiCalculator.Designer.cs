@@ -50,7 +50,7 @@
             this.dataGridViewTextImageColumn2 = new ImbaControls.DataGridViewTextImageColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmbSelectItem = new System.Windows.Forms.Button();
+            this.btnSelectItem = new System.Windows.Forms.Button();
             this.pibItemImage = new System.Windows.Forms.PictureBox();
             this.lblItemName = new System.Windows.Forms.Label();
             this.btnAbout = new System.Windows.Forms.Button();
@@ -291,15 +291,15 @@
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // cmbSelectItem
+            // btnSelectItem
             // 
-            this.cmbSelectItem.Location = new System.Drawing.Point(244, 44);
-            this.cmbSelectItem.Name = "cmbSelectItem";
-            this.cmbSelectItem.Size = new System.Drawing.Size(84, 23);
-            this.cmbSelectItem.TabIndex = 10;
-            this.cmbSelectItem.Text = "Select Item...";
-            this.cmbSelectItem.UseVisualStyleBackColor = true;
-            this.cmbSelectItem.Click += new System.EventHandler(this.cmbSelectItem_Click);
+            this.btnSelectItem.Location = new System.Drawing.Point(244, 44);
+            this.btnSelectItem.Name = "btnSelectItem";
+            this.btnSelectItem.Size = new System.Drawing.Size(84, 23);
+            this.btnSelectItem.TabIndex = 10;
+            this.btnSelectItem.Text = "Select Item...";
+            this.btnSelectItem.UseVisualStyleBackColor = true;
+            this.btnSelectItem.Click += new System.EventHandler(this.btnSelectItem_Click);
             // 
             // pibItemImage
             // 
@@ -336,7 +336,7 @@
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.lblItemName);
             this.Controls.Add(this.pibItemImage);
-            this.Controls.Add(this.cmbSelectItem);
+            this.Controls.Add(this.btnSelectItem);
             this.Controls.Add(this.btnLoadItemsFromFile);
             this.Controls.Add(this.btnClearResult);
             this.Controls.Add(this.btnCalc);
@@ -380,7 +380,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private ImbaControls.DataGridViewTextImageColumn clmResultName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clmResultCount;
-        private System.Windows.Forms.Button cmbSelectItem;
+        private System.Windows.Forms.Button btnSelectItem;
         private System.Windows.Forms.PictureBox pibItemImage;
         private System.Windows.Forms.Label lblItemName;
         private System.Windows.Forms.Button btnAbout;

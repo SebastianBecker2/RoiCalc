@@ -14,6 +14,7 @@ namespace RoiCalc
     partial class ItemSelectionDialog : Form
     {
         public IEnumerable<Item> Items { get; set; }
+
         public Item SelectedItem
         {
             get { return selected_item; }
@@ -38,13 +39,13 @@ namespace RoiCalc
         {
             if (dgvItems.SelectedRows.Count >= 1)
             {
-                SelectedItem = dgvItems.SelectedRows[0].Cells[0].Tag as Item;
+                SelectedItem = dgvItems.SelectedRows[0].Tag as Item;
                 return;
             }
 
             if (dgvItems.Rows.Count == 1)
             {
-                SelectedItem = dgvItems.Rows[0].Cells[0].Tag as Item;
+                SelectedItem = dgvItems.Rows[0].Tag as Item;
                 return;
             }
 
@@ -53,12 +54,12 @@ namespace RoiCalc
 
         protected override void OnLoad(EventArgs e)
         {
-            UpdateItemList(Items);
+            UpdateItemList(Items, SelectedItem);
 
             base.OnLoad(e);
         }
 
-        private void UpdateItemList(IEnumerable<Item> items)
+        private void UpdateItemList(IEnumerable<Item> items, Item selected_item)
         {
             dgvItems.Rows.Clear();
 
@@ -66,6 +67,8 @@ namespace RoiCalc
             {
                 return;
             }
+
+            selected_item = items.FirstOrDefault(i => i == selected_item);
 
             foreach (var item in items)
             {
@@ -75,15 +78,29 @@ namespace RoiCalc
                 {
                     Value = item.Name,
                     Image = item.Image?.Resize(15, 15),
-                    Tag = item,
                 };
                 row.Cells.Add(name_cell);
                 row.DefaultCellStyle.BackColor = item.Type.ToBackColor();
+                row.Tag = item;
 
                 dgvItems.Rows.Add(row);
             }
 
             dgvItems.ClearSelection();
+
+            if (selected_item == null)
+            {
+                return;
+            }
+
+            var selected_row = dgvItems.Rows
+                .OfType<DataGridViewRow>()
+                .FirstOrDefault(r => r.Tag == selected_item);
+            if (selected_row != null)
+            {
+                dgvItems.CurrentCell = selected_row.Cells[0];
+                selected_row.Selected = true;
+            }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -100,7 +117,7 @@ namespace RoiCalc
                 string.IsNullOrWhiteSpace(txtFilter.Text) ||
                 i.Name.ToLower().StartsWith(txtFilter.Text.ToLower()));
 
-            UpdateItemList(items);
+            UpdateItemList(items, SelectedItem);
         }
     }
 }

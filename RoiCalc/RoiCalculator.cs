@@ -326,11 +326,12 @@ namespace RoiCalc
             }
         }
 
-        private void cmbSelectItem_Click(object sender, EventArgs e)
+        private void btnSelectItem_Click(object sender, EventArgs e)
         {
             using (var dlg = new ItemSelectionDialog())
             {
                 dlg.Items = Items.Values;
+                dlg.SelectedItem = SelectedItem;
 
                 if (dlg.ShowDialog() != DialogResult.OK)
                 {
