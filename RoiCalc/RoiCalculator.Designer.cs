@@ -65,6 +65,9 @@
             this.dgvResults.AllowUserToDeleteRows = false;
             this.dgvResults.AllowUserToResizeColumns = false;
             this.dgvResults.AllowUserToResizeRows = false;
+            this.dgvResults.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvResults.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvResults.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmResultName,
@@ -77,7 +80,7 @@
             this.dgvResults.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvResults.ShowEditingIcon = false;
             this.dgvResults.ShowRowErrors = false;
-            this.dgvResults.Size = new System.Drawing.Size(182, 229);
+            this.dgvResults.Size = new System.Drawing.Size(182, 258);
             this.dgvResults.TabIndex = 1;
             this.dgvResults.TabStop = false;
             // 
@@ -101,14 +104,14 @@
             // 
             // txtCount
             // 
-            this.txtCount.Location = new System.Drawing.Point(64, 39);
+            this.txtCount.Location = new System.Drawing.Point(64, 79);
             this.txtCount.Name = "txtCount";
             this.txtCount.Size = new System.Drawing.Size(100, 20);
             this.txtCount.TabIndex = 1;
             // 
             // txtInterval
             // 
-            this.txtInterval.Location = new System.Drawing.Point(64, 65);
+            this.txtInterval.Location = new System.Drawing.Point(64, 105);
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(100, 20);
             this.txtInterval.TabIndex = 2;
@@ -116,7 +119,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 42);
+            this.label1.Location = new System.Drawing.Point(20, 82);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 4;
@@ -125,7 +128,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 68);
+            this.label2.Location = new System.Drawing.Point(13, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(45, 13);
             this.label2.TabIndex = 5;
@@ -134,7 +137,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 15);
+            this.label3.Location = new System.Drawing.Point(28, 23);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 13);
             this.label3.TabIndex = 6;
@@ -146,6 +149,7 @@
             this.dgvCalculations.AllowUserToDeleteRows = false;
             this.dgvCalculations.AllowUserToResizeColumns = false;
             this.dgvCalculations.AllowUserToResizeRows = false;
+            this.dgvCalculations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvCalculations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCalculations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmCalculationName,
@@ -153,7 +157,7 @@
             this.clmCalculationInterval,
             this.clmCaclulationDelete,
             this.clmCalculationAddResult});
-            this.dgvCalculations.Location = new System.Drawing.Point(12, 104);
+            this.dgvCalculations.Location = new System.Drawing.Point(12, 133);
             this.dgvCalculations.MultiSelect = false;
             this.dgvCalculations.Name = "dgvCalculations";
             this.dgvCalculations.ReadOnly = true;
@@ -217,7 +221,7 @@
             // 
             // btnCalc
             // 
-            this.btnCalc.Location = new System.Drawing.Point(196, 75);
+            this.btnCalc.Location = new System.Drawing.Point(211, 102);
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(54, 23);
             this.btnCalc.TabIndex = 3;
@@ -227,9 +231,9 @@
             // 
             // btnClearResult
             // 
-            this.btnClearResult.Location = new System.Drawing.Point(256, 75);
+            this.btnClearResult.Location = new System.Drawing.Point(271, 102);
             this.btnClearResult.Name = "btnClearResult";
-            this.btnClearResult.Size = new System.Drawing.Size(72, 23);
+            this.btnClearResult.Size = new System.Drawing.Size(57, 23);
             this.btnClearResult.TabIndex = 8;
             this.btnClearResult.Text = "Clear";
             this.btnClearResult.UseVisualStyleBackColor = true;
@@ -237,7 +241,7 @@
             // 
             // btnLoadItemsFromFile
             // 
-            this.btnLoadItemsFromFile.Location = new System.Drawing.Point(244, 46);
+            this.btnLoadItemsFromFile.Location = new System.Drawing.Point(244, 73);
             this.btnLoadItemsFromFile.Name = "btnLoadItemsFromFile";
             this.btnLoadItemsFromFile.Size = new System.Drawing.Size(84, 23);
             this.btnLoadItemsFromFile.TabIndex = 9;
@@ -289,7 +293,7 @@
             // 
             // cmbSelectItem
             // 
-            this.cmbSelectItem.Location = new System.Drawing.Point(244, 17);
+            this.cmbSelectItem.Location = new System.Drawing.Point(244, 44);
             this.cmbSelectItem.Name = "cmbSelectItem";
             this.cmbSelectItem.Size = new System.Drawing.Size(84, 23);
             this.cmbSelectItem.TabIndex = 10;
@@ -299,16 +303,16 @@
             // 
             // pibItemImage
             // 
-            this.pibItemImage.Location = new System.Drawing.Point(64, 12);
+            this.pibItemImage.Location = new System.Drawing.Point(64, 23);
             this.pibItemImage.Name = "pibItemImage";
-            this.pibItemImage.Size = new System.Drawing.Size(20, 20);
+            this.pibItemImage.Size = new System.Drawing.Size(50, 50);
             this.pibItemImage.TabIndex = 11;
             this.pibItemImage.TabStop = false;
             // 
             // lblItemName
             // 
             this.lblItemName.AutoSize = true;
-            this.lblItemName.Location = new System.Drawing.Point(91, 14);
+            this.lblItemName.Location = new System.Drawing.Point(120, 23);
             this.lblItemName.Name = "lblItemName";
             this.lblItemName.Size = new System.Drawing.Size(86, 13);
             this.lblItemName.TabIndex = 12;
@@ -316,9 +320,9 @@
             // 
             // btnAbout
             // 
-            this.btnAbout.Location = new System.Drawing.Point(185, 46);
+            this.btnAbout.Location = new System.Drawing.Point(244, 15);
             this.btnAbout.Name = "btnAbout";
-            this.btnAbout.Size = new System.Drawing.Size(53, 23);
+            this.btnAbout.Size = new System.Drawing.Size(84, 23);
             this.btnAbout.TabIndex = 13;
             this.btnAbout.Text = "About...";
             this.btnAbout.UseVisualStyleBackColor = true;
@@ -328,7 +332,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(526, 254);
+            this.ClientSize = new System.Drawing.Size(526, 283);
             this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.lblItemName);
             this.Controls.Add(this.pibItemImage);
