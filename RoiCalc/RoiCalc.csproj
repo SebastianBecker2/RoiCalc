@@ -108,9 +108,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Resources\items %286.2 build 2307b%29.roic">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\items.roic">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
