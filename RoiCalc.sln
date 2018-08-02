@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoiCalc", "RoiCalc\RoiCalc.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "ExtensionMethods\ExtensionMethods.csproj", "{3A2325D9-157B-4358-9662-E6D7EE1DC759}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageComboBox", "ImageComboBox\ImageComboBox.csproj", "{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		All|Any CPU = All|Any CPU
@@ -43,18 +41,6 @@ Global
 		{3A2325D9-157B-4358-9662-E6D7EE1DC759}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3A2325D9-157B-4358-9662-E6D7EE1DC759}.Release|x86.ActiveCfg = Release|Any CPU
 		{3A2325D9-157B-4358-9662-E6D7EE1DC759}.Release|x86.Build.0 = Release|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.All|Any CPU.ActiveCfg = Debug Analysis|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.All|Any CPU.Build.0 = Debug Analysis|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.All|x86.ActiveCfg = Debug Analysis|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.All|x86.Build.0 = Debug Analysis|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.Debug|x86.Build.0 = Debug|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.Release|x86.ActiveCfg = Release|Any CPU
-		{33D6FF5D-C30C-4976-B35D-98CDF7519BA0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

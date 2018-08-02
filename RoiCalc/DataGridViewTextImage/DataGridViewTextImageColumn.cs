@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ImbaControls
 {
-	public class DataGridViewTextImageColumn : DataGridViewTextBoxColumn
+    public class DataGridViewTextImageColumn : DataGridViewTextBoxColumn
 	{
 		private Image imageValue;
 		private Size imageSize;

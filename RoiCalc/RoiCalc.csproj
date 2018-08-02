@@ -120,10 +120,6 @@
       <Project>{3a2325d9-157b-4358-9662-e6d7ee1dc759}</Project>
       <Name>ExtensionMethods</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ImageComboBox\ImageComboBox.csproj">
-      <Project>{33d6ff5d-c30c-4976-b35d-98cdf7519ba0}</Project>
-      <Name>ImageComboBox</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\timer-clock.png" />
