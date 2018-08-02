@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutDialog.Designer.cs">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Calculation.cs" />
     <Compile Include="DataGridViewTextImage\DataGridViewTextImageCell.cs" />
     <Compile Include="DataGridViewTextImage\DataGridViewTextImageColumn.cs" />
@@ -56,15 +62,24 @@
       <DependentUpon>ItemSelectionDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="ItemType.cs" />
+    <Compile Include="RecipeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="RecipeView.Designer.cs">
+      <DependentUpon>RecipeView.cs</DependentUpon>
+    </Compile>
     <Compile Include="ResultCollection.cs" />
-    <Compile Include="RoiCalc.cs">
+    <Compile Include="RoiCalculator.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RoiCalc.Designer.cs">
-      <DependentUpon>RoiCalc.cs</DependentUpon>
+    <Compile Include="RoiCalculator.Designer.cs">
+      <DependentUpon>RoiCalculator.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutDialog.resx">
+      <DependentUpon>AboutDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ItemSelectionDialog.resx">
       <DependentUpon>ItemSelectionDialog.cs</DependentUpon>
     </EmbeddedResource>
@@ -78,8 +93,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RoiCalc.resx">
-      <DependentUpon>RoiCalc.cs</DependentUpon>
+    <EmbeddedResource Include="RecipeView.resx">
+      <DependentUpon>RecipeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RoiCalculator.resx">
+      <DependentUpon>RoiCalculator.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -109,6 +127,9 @@
       <Project>{33d6ff5d-c30c-4976-b35d-98cdf7519ba0}</Project>
       <Name>ImageComboBox</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\timer-clock.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

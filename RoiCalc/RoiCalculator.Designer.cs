@@ -1,6 +1,6 @@
 ﻿namespace RoiCalc
 {
-    partial class RoiCalc
+    partial class RoiCalculator
     {
         /// <summary>
         /// Required designer variable.
@@ -53,6 +53,7 @@
             this.cmbSelectItem = new System.Windows.Forms.Button();
             this.pibItemImage = new System.Windows.Forms.PictureBox();
             this.lblItemName = new System.Windows.Forms.Label();
+            this.btnAbout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalculations)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibItemImage)).BeginInit();
@@ -313,11 +314,22 @@
             this.lblItemName.TabIndex = 12;
             this.lblItemName.Text = "[Item name here]";
             // 
-            // RoiCalc
+            // btnAbout
+            // 
+            this.btnAbout.Location = new System.Drawing.Point(185, 46);
+            this.btnAbout.Name = "btnAbout";
+            this.btnAbout.Size = new System.Drawing.Size(53, 23);
+            this.btnAbout.TabIndex = 13;
+            this.btnAbout.Text = "About...";
+            this.btnAbout.UseVisualStyleBackColor = true;
+            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            // 
+            // RoiCalculator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(526, 254);
+            this.Controls.Add(this.btnAbout);
             this.Controls.Add(this.lblItemName);
             this.Controls.Add(this.pibItemImage);
             this.Controls.Add(this.cmbSelectItem);
@@ -331,7 +343,7 @@
             this.Controls.Add(this.txtInterval);
             this.Controls.Add(this.txtCount);
             this.Controls.Add(this.dgvResults);
-            this.Name = "RoiCalc";
+            this.Name = "RoiCalculator";
             this.Text = "RoiCalc";
             ((System.ComponentModel.ISupportInitialize)(this.dgvResults)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCalculations)).EndInit();
@@ -367,6 +379,7 @@
         private System.Windows.Forms.Button cmbSelectItem;
         private System.Windows.Forms.PictureBox pibItemImage;
         private System.Windows.Forms.Label lblItemName;
+        private System.Windows.Forms.Button btnAbout;
     }
 }
 

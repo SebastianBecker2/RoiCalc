@@ -14,13 +14,41 @@ namespace RoiCalc
     partial class ItemSelectionDialog : Form
     {
         public IEnumerable<Item> Items { get; set; }
-        public Item SelectedItem { get; set; }
+        public Item SelectedItem
+        {
+            get { return selected_item; }
+            set
+            {
+                selected_item = value;
+                recipeView1.Visible = selected_item != null;
+                recipeView1.SetItem(selected_item);
+            }
+        }
+        private Item selected_item;
 
         public ItemSelectionDialog()
         {
             InitializeComponent();
 
             dgvItems.DoubleClick += btnOk_Click;
+            dgvItems.SelectionChanged += DgvItems_SelectionChanged;
+        }
+
+        private void DgvItems_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvItems.SelectedRows.Count >= 1)
+            {
+                SelectedItem = dgvItems.SelectedRows[0].Cells[0].Tag as Item;
+                return;
+            }
+
+            if (dgvItems.Rows.Count == 1)
+            {
+                SelectedItem = dgvItems.Rows[0].Cells[0].Tag as Item;
+                return;
+            }
+
+            SelectedItem = null;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -60,15 +88,8 @@ namespace RoiCalc
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            if (dgvItems.SelectedRows.Count >= 1)
+            if (SelectedItem != null)
             {
-                SelectedItem = dgvItems.SelectedRows[0].Cells[0].Tag as Item;
-                DialogResult = DialogResult.OK;
-            }
-
-            if (dgvItems.Rows.Count == 1)
-            {
-                SelectedItem = dgvItems.Rows[0].Cells[0].Tag as Item;
                 DialogResult = DialogResult.OK;
             }
         }

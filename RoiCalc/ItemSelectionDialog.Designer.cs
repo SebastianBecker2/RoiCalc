@@ -35,6 +35,7 @@
             this.dataGridViewTextImageColumn1 = new ImbaControls.DataGridViewTextImageColumn();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.recipeView1 = new RoiCalc.RecipeView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
             // 
@@ -44,6 +45,8 @@
             this.dgvItems.AllowUserToDeleteRows = false;
             this.dgvItems.AllowUserToResizeColumns = false;
             this.dgvItems.AllowUserToResizeRows = false;
+            this.dgvItems.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvItems.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItems.ColumnHeadersVisible = false;
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -56,7 +59,7 @@
             this.dgvItems.ShowCellErrors = false;
             this.dgvItems.ShowCellToolTips = false;
             this.dgvItems.ShowEditingIcon = false;
-            this.dgvItems.Size = new System.Drawing.Size(201, 435);
+            this.dgvItems.Size = new System.Drawing.Size(201, 257);
             this.dgvItems.TabIndex = 2;
             // 
             // clmItemName
@@ -70,7 +73,7 @@
             // btnOk
             // 
             this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnOk.Location = new System.Drawing.Point(57, 484);
+            this.btnOk.Location = new System.Drawing.Point(377, 271);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 3;
@@ -82,7 +85,7 @@
             // 
             this.btnCancel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel.Location = new System.Drawing.Point(138, 484);
+            this.btnCancel.Location = new System.Drawing.Point(458, 271);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;
@@ -114,18 +117,31 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Filter:";
             // 
+            // recipeView1
+            // 
+            this.recipeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.recipeView1.Location = new System.Drawing.Point(219, 12);
+            this.recipeView1.MinimumSize = new System.Drawing.Size(316, 255);
+            this.recipeView1.Name = "recipeView1";
+            this.recipeView1.Size = new System.Drawing.Size(316, 255);
+            this.recipeView1.TabIndex = 5;
+            // 
             // ItemSelectionDialog
             // 
             this.AcceptButton = this.btnOk;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(225, 519);
+            this.ClientSize = new System.Drawing.Size(545, 306);
+            this.Controls.Add(this.recipeView1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.dgvItems);
+            this.MinimumSize = new System.Drawing.Size(561, 345);
             this.Name = "ItemSelectionDialog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "RoiCalc - Select Item";
@@ -144,5 +160,6 @@
         private ImbaControls.DataGridViewTextImageColumn dataGridViewTextImageColumn1;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Label label2;
+        private RecipeView recipeView1;
     }
 }

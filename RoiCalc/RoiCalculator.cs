@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace RoiCalc
 {
-    public partial class RoiCalc : Form
+    public partial class RoiCalculator : Form
     {
         private const string ItemsFileName = @"items.roic";
 
@@ -45,7 +45,7 @@ namespace RoiCalc
         private Item selected_item;
 
 
-        public RoiCalc()
+        public RoiCalculator()
         {
             InitializeComponent();
             Items = ReadItems(Path.Combine(Directory.GetCurrentDirectory(), "Resources", ItemsFileName));
@@ -338,6 +338,14 @@ namespace RoiCalc
                 }
 
                 SelectedItem = dlg.SelectedItem;
+            }
+        }
+
+        private void btnAbout_Click(object sender, EventArgs e)
+        {
+            using (var dlg = new AboutDialog())
+            {
+                dlg.ShowDialog();
             }
         }
     }
