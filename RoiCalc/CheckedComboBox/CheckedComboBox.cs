@@ -1,10 +1,9 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
+using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
-using System.Drawing;
-using System.Diagnostics;
+using System.Windows.Forms.VisualStyles;
 
 namespace CheckComboBoxTest
 {
@@ -89,11 +88,26 @@ namespace CheckComboBoxTest
                     }
                 }
 
-            } // end internal class CustomCheckedListBox
+                protected override void OnDrawItem(DrawItemEventArgs e)
+                {
+                    var item = Items[e.Index] as CCBoxItem;
+                    var e2 = new DrawItemEventArgs(e.Graphics, e.Font, e.Bounds, e.Index, e.State, e.ForeColor, item.BackColor);
+                    e2.DrawBackground();
 
-            // --------------------------------------------------------------------------------------------------------
+                    var checkSize = CheckBoxRenderer.GetGlyphSize(e.Graphics, CheckBoxState.MixedNormal);
+                    var dx = (e.Bounds.Height - checkSize.Width) / 2;
+                    
+                    var checkBoxState = GetItemChecked(e.Index) ? CheckBoxState.CheckedNormal : CheckBoxState.UncheckedNormal;
+                    CheckBoxRenderer.DrawCheckBox(e.Graphics, new Point(dx, e.Bounds.Top + dx), checkBoxState);
+                    var rec = new Rectangle(e.Bounds.Height, e.Bounds.Top, e.Bounds.Width - e.Bounds.Height, e.Bounds.Height);
 
-            // ********************************************* Data *********************************************
+                    using (var sf = new StringFormat { LineAlignment = StringAlignment.Center })
+                    using (var brush = new SolidBrush(e.ForeColor))
+                    {
+                        e.Graphics.DrawString(item.Name, Font, brush, rec, sf);
+                    }
+                }
+            }
 
             private CheckedComboBox ccbParent;
 
@@ -131,7 +145,7 @@ namespace CheckComboBoxTest
                 InitializeComponent();
                 ShowInTaskbar = false;
                 // Add a handler to notify our parent of ItemCheck events.
-                List.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(cclb_ItemCheck);
+                List.ItemCheck += new ItemCheckEventHandler(cclb_ItemCheck);
             }
 
             // ********************************************* Methods *********************************************
@@ -144,27 +158,27 @@ namespace CheckComboBoxTest
                 // 
                 // cclb
                 // 
-                List.BorderStyle = System.Windows.Forms.BorderStyle.None;
-                List.Dock = System.Windows.Forms.DockStyle.Fill;
+                List.BorderStyle = BorderStyle.None;
+                List.Dock = DockStyle.Fill;
                 List.FormattingEnabled = true;
-                List.Location = new System.Drawing.Point(0, 0);
+                List.Location = new Point(0, 0);
                 List.Name = "cclb";
-                List.Size = new System.Drawing.Size(47, 15);
+                List.Size = new Size(47, 15);
                 List.TabIndex = 0;
                 // 
                 // Dropdown
                 // 
-                AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-                AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-                BackColor = System.Drawing.SystemColors.Menu;
-                ClientSize = new System.Drawing.Size(47, 16);
+                AutoScaleDimensions = new SizeF(6F, 13F);
+                AutoScaleMode = AutoScaleMode.Font;
+                BackColor = SystemColors.Menu;
+                ClientSize = new Size(47, 16);
                 ControlBox = false;
                 Controls.Add(List);
-                ForeColor = System.Drawing.SystemColors.ControlText;
-                FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+                ForeColor = SystemColors.ControlText;
+                FormBorderStyle = FormBorderStyle.FixedToolWindow;
                 MinimizeBox = false;
                 Name = "ccbParent";
-                StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+                StartPosition = FormStartPosition.Manual;
                 ResumeLayout(false);
             }
 
@@ -273,12 +287,6 @@ namespace CheckComboBoxTest
         {
             get { return dropdown.List.CheckOnClick; }
             set { dropdown.List.CheckOnClick = value; }
-        }
-
-        public new string DisplayMember
-        {
-            get { return dropdown.List.DisplayMember; }
-            set { dropdown.List.DisplayMember = value; }
         }
 
         public new CheckedListBox.ObjectCollection Items
@@ -417,7 +425,7 @@ namespace CheckComboBoxTest
         {
             if (index < 0 || index > Items.Count)
             {
-                throw new ArgumentOutOfRangeException("index", "value out of range");
+                throw new ArgumentOutOfRangeException(nameof(index), "value out of range");
             }
             else
             {
@@ -431,7 +439,7 @@ namespace CheckComboBoxTest
         {
             if (index < 0 || index > Items.Count)
             {
-                throw new ArgumentOutOfRangeException("index", "value out of range");
+                throw new ArgumentOutOfRangeException(nameof(index), "value out of range");
             }
             else
             {
@@ -443,7 +451,7 @@ namespace CheckComboBoxTest
         {
             if (index < 0 || index > Items.Count)
             {
-                throw new ArgumentOutOfRangeException("index", "value out of range");
+                throw new ArgumentOutOfRangeException(nameof(index), "value out of range");
             }
             else
             {
@@ -459,6 +467,6 @@ namespace CheckComboBoxTest
             DroppedDown = false;
         }
 
-    } // end public class CheckedComboBox
+    }
 
 }

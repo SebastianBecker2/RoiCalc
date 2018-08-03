@@ -30,7 +30,11 @@ namespace RoiCalc
 
             foreach (ItemType type in Enum.GetValues(typeof(ItemType)))
             {
-                cmbFilter.Items.Add(new CCBoxItem(type.ToPrettyString(), 0));
+                cmbFilter.Items.Add(new CCBoxItem()
+                {
+                    Name = type.ToPrettyString(),
+                    BackColor = type.ToBackColor()
+                });
                 cmbFilter.SetItemChecked((int)type - 1, true);
             }
             cmbFilter.ItemCheck += (s, e) => FilterChanged(GetSelectedTypeFilterIndices(e));
