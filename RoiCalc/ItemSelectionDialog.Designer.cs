@@ -52,7 +52,7 @@
             this.dgvItems.ColumnHeadersVisible = false;
             this.dgvItems.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmItemName});
-            this.dgvItems.Location = new System.Drawing.Point(12, 65);
+            this.dgvItems.Location = new System.Drawing.Point(12, 38);
             this.dgvItems.MultiSelect = false;
             this.dgvItems.Name = "dgvItems";
             this.dgvItems.RowHeadersVisible = false;
@@ -60,7 +60,7 @@
             this.dgvItems.ShowCellErrors = false;
             this.dgvItems.ShowCellToolTips = false;
             this.dgvItems.ShowEditingIcon = false;
-            this.dgvItems.Size = new System.Drawing.Size(201, 298);
+            this.dgvItems.Size = new System.Drawing.Size(201, 325);
             this.dgvItems.TabIndex = 2;
             // 
             // clmItemName
@@ -105,7 +105,7 @@
             // 
             this.txtFilter.Location = new System.Drawing.Point(50, 12);
             this.txtFilter.Name = "txtFilter";
-            this.txtFilter.Size = new System.Drawing.Size(163, 20);
+            this.txtFilter.Size = new System.Drawing.Size(147, 20);
             this.txtFilter.TabIndex = 1;
             // 
             // label2
@@ -134,13 +134,13 @@
             this.cmbFilter.DisplayMember = "Name";
             this.cmbFilter.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
             this.cmbFilter.DropDownHeight = 1;
-            this.cmbFilter.DropDownWidth = 50;
+            this.cmbFilter.DropDownWidth = 100;
             this.cmbFilter.FormattingEnabled = true;
             this.cmbFilter.IntegralHeight = false;
-            this.cmbFilter.Location = new System.Drawing.Point(12, 38);
+            this.cmbFilter.Location = new System.Drawing.Point(196, 12);
             this.cmbFilter.MaxDropDownItems = 10;
             this.cmbFilter.Name = "cmbFilter";
-            this.cmbFilter.Size = new System.Drawing.Size(201, 21);
+            this.cmbFilter.Size = new System.Drawing.Size(17, 21);
             this.cmbFilter.TabIndex = 6;
             this.cmbFilter.ValueSeparator = ", ";
             // 

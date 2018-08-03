@@ -371,7 +371,7 @@ namespace CheckComboBoxTest
             if (!dropdown.Visible)
             {
                 Rectangle rect = RectangleToScreen(ClientRectangle);
-                dropdown.Location = new Point(rect.X, rect.Y + Size.Height);
+                dropdown.Location = new Point(rect.X + Size.Width, rect.Y);
                 int count = dropdown.List.Items.Count;
                 if (count > MaxDropDownItems)
                 {
@@ -381,7 +381,7 @@ namespace CheckComboBoxTest
                 {
                     count = 1;
                 }
-                dropdown.Size = new Size(Size.Width, (dropdown.List.ItemHeight) * count + 2);
+                dropdown.Size = new Size(DropDownWidth, (dropdown.List.ItemHeight) * count + 2);
                 dropdown.Show(this);
             }
         }
