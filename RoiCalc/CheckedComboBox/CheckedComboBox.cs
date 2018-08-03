@@ -190,7 +190,7 @@ namespace CheckComboBoxTest
                     return "All selected";
                 }
 
-                StringBuilder sb = new StringBuilder("");
+                var sb = new StringBuilder();
                 foreach (var item in List.CheckedItems)
                 {
                     if (sb.Length != 0)
@@ -198,6 +198,11 @@ namespace CheckComboBoxTest
                         sb.Append(ccbParent.ValueSeparator);
                     }
                     sb.Append(List.GetItemText(item));
+                }
+
+                if (sb.Length == 0)
+                {
+                    return "None selected";
                 }
                 return sb.ToString();
             }
