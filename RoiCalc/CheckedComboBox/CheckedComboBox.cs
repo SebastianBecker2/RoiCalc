@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
+using System.Linq;
 using System.Windows.Forms;
 using System.Windows.Forms.VisualStyles;
 
@@ -96,7 +97,7 @@ namespace CheckComboBoxTest
 
                     var checkSize = CheckBoxRenderer.GetGlyphSize(e.Graphics, CheckBoxState.MixedNormal);
                     var dx = (e.Bounds.Height - checkSize.Width) / 2;
-                    
+
                     var checkBoxState = GetItemChecked(e.Index) ? CheckBoxState.CheckedNormal : CheckBoxState.UncheckedNormal;
                     CheckBoxRenderer.DrawCheckBox(e.Graphics, new Point(dx, e.Bounds.Top + dx), checkBoxState);
                     var rec = new Rectangle(e.Bounds.Height, e.Bounds.Top, e.Bounds.Width - e.Bounds.Height, e.Bounds.Height);
@@ -184,14 +185,19 @@ namespace CheckComboBoxTest
 
             public string GetCheckedItemsStringValue()
             {
-                StringBuilder sb = new StringBuilder("");
-                for (int i = 0; i < List.CheckedItems.Count; i++)
+                if (List.CheckedItems.Count == List.Items.Count)
                 {
-                    sb.Append(List.GetItemText(List.CheckedItems[i])).Append(ccbParent.ValueSeparator);
+                    return "All selected";
                 }
-                if (sb.Length > 0)
+
+                StringBuilder sb = new StringBuilder("");
+                foreach (var item in List.CheckedItems)
                 {
-                    sb.Remove(sb.Length - ccbParent.ValueSeparator.Length, ccbParent.ValueSeparator.Length);
+                    if (sb.Length != 0)
+                    {
+                        sb.Append(ccbParent.ValueSeparator);
+                    }
+                    sb.Append(List.GetItemText(item));
                 }
                 return sb.ToString();
             }
