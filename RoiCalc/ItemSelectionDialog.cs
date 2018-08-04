@@ -18,8 +18,8 @@ namespace RoiCalc
             set
             {
                 selected_item = value;
-                recipeView1.Visible = selected_item != null;
-                recipeView1.SetItem(selected_item);
+                rcvCurrentRecipe.Visible = selected_item != null;
+                rcvCurrentRecipe.Recipe = selected_item;
             }
         }
         private Item selected_item;
@@ -42,6 +42,15 @@ namespace RoiCalc
 
             dgvItems.DoubleClick += btnOk_Click;
             dgvItems.SelectionChanged += DgvItems_SelectionChanged;
+
+            rcvCurrentRecipe.RequirementDoubleClick += RcvCurrentRecipe_RequirementDoubleClick;
+
+        }
+
+        private void RcvCurrentRecipe_RequirementDoubleClick(object sender, RecipeView.RequirementDoubleClickEventArgs e)
+        {
+            SelectedItem = e.ClickedRequirement;
+            FilterChanged(GetSelectedTypeFilterIndices(null));
         }
 
         private IEnumerable<int> GetSelectedTypeFilterIndices(ItemCheckEventArgs e = null)

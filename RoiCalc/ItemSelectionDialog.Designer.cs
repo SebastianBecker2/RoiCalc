@@ -35,7 +35,7 @@
             this.dataGridViewTextImageColumn1 = new ImbaControls.DataGridViewTextImageColumn();
             this.txtFilter = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.recipeView1 = new RoiCalc.RecipeView();
+            this.rcvCurrentRecipe = new RoiCalc.RecipeView();
             this.cmbFilter = new CheckComboBoxTest.CheckedComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItems)).BeginInit();
             this.SuspendLayout();
@@ -119,14 +119,14 @@
             // 
             // recipeView1
             // 
-            this.recipeView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.rcvCurrentRecipe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.recipeView1.Location = new System.Drawing.Point(219, 12);
-            this.recipeView1.MinimumSize = new System.Drawing.Size(316, 255);
-            this.recipeView1.Name = "recipeView1";
-            this.recipeView1.Size = new System.Drawing.Size(316, 323);
-            this.recipeView1.TabIndex = 5;
+            this.rcvCurrentRecipe.Location = new System.Drawing.Point(219, 12);
+            this.rcvCurrentRecipe.MinimumSize = new System.Drawing.Size(316, 255);
+            this.rcvCurrentRecipe.Name = "recipeView1";
+            this.rcvCurrentRecipe.Size = new System.Drawing.Size(316, 323);
+            this.rcvCurrentRecipe.TabIndex = 5;
             // 
             // cmbFilter
             // 
@@ -152,7 +152,7 @@
             this.CancelButton = this.btnCancel;
             this.ClientSize = new System.Drawing.Size(545, 374);
             this.Controls.Add(this.cmbFilter);
-            this.Controls.Add(this.recipeView1);
+            this.Controls.Add(this.rcvCurrentRecipe);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtFilter);
             this.Controls.Add(this.btnCancel);
@@ -177,7 +177,7 @@
         private ImbaControls.DataGridViewTextImageColumn dataGridViewTextImageColumn1;
         private System.Windows.Forms.TextBox txtFilter;
         private System.Windows.Forms.Label label2;
-        private RecipeView recipeView1;
+        private RecipeView rcvCurrentRecipe;
         private CheckComboBoxTest.CheckedComboBox cmbFilter;
     }
 }
