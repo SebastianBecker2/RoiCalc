@@ -126,6 +126,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\no_image.png" />
     <Content Include="Resources\timer-clock.png" />
   </ItemGroup>
   <ItemGroup />

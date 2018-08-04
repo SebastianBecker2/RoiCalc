@@ -113,6 +113,7 @@ namespace RoiCalc
                     Count = count,
                     Interval = interval,
                     Type = (ItemType)type,
+                    Image = Properties.Resources.no_image,
                 };
 
                 try

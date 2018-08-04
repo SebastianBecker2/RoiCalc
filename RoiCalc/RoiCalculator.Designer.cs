@@ -306,6 +306,7 @@
             this.pibItemImage.Location = new System.Drawing.Point(64, 23);
             this.pibItemImage.Name = "pibItemImage";
             this.pibItemImage.Size = new System.Drawing.Size(50, 50);
+            this.pibItemImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pibItemImage.TabIndex = 11;
             this.pibItemImage.TabStop = false;
             // 
