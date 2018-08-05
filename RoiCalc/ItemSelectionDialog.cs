@@ -24,6 +24,9 @@ namespace RoiCalc
         }
         private Item selected_item;
 
+        private bool updating_item_list = false;
+        private bool updating_item_list_selection = false;
+
         public ItemSelectionDialog()
         {
             InitializeComponent();
@@ -47,7 +50,9 @@ namespace RoiCalc
 
         }
 
-        private void RcvCurrentRecipe_RequirementDoubleClick(object sender, RecipeView.RequirementDoubleClickEventArgs e)
+        private void RcvCurrentRecipe_RequirementDoubleClick(
+            object sender, 
+            RecipeView.RequirementDoubleClickEventArgs e)
         {
             SelectedItem = e.ClickedRequirement;
             FilterChanged(GetSelectedTypeFilterIndices(null));
@@ -79,69 +84,87 @@ namespace RoiCalc
 
         private void DgvItems_SelectionChanged(object sender, EventArgs e)
         {
+            if (updating_item_list || updating_item_list_selection)
+            {
+                return;
+            }
+
             if (dgvItems.SelectedRows.Count >= 1)
             {
                 SelectedItem = dgvItems.SelectedRows[0].Tag as Item;
                 return;
             }
-
-            if (dgvItems.Rows.Count == 1)
-            {
-                SelectedItem = dgvItems.Rows[0].Tag as Item;
-                return;
-            }
-
-            SelectedItem = null;
         }
 
         protected override void OnLoad(EventArgs e)
         {
-            UpdateItemList(Items, SelectedItem);
+            UpdateItemList(Items);
+            UpdateItemListSelection(SelectedItem);
 
             base.OnLoad(e);
         }
 
-        private void UpdateItemList(IEnumerable<Item> items, Item selected_item)
+        private void UpdateItemListSelection(Item selected_item)
         {
-            dgvItems.Rows.Clear();
-
-            if (items == null)
+            updating_item_list_selection = true;
+            try
             {
-                return;
-            }
+                dgvItems.ClearSelection();
 
-            selected_item = items.FirstOrDefault(i => i == selected_item);
-
-            foreach (var item in items)
-            {
-                var row = new DataGridViewRow();
-
-                var name_cell = new DataGridViewTextImageCell()
+                if (selected_item == null)
                 {
-                    Value = item.Name,
-                    Image = item.Image?.Resize(15, 15),
-                };
-                row.Cells.Add(name_cell);
-                row.DefaultCellStyle.BackColor = item.Type.ToBackColor();
-                row.Tag = item;
+                    return;
+                }
 
-                dgvItems.Rows.Add(row);
-            }
-
-            dgvItems.ClearSelection();
-
-            if (selected_item == null)
+                var selected_row = dgvItems.Rows
+                    .OfType<DataGridViewRow>()
+                    .FirstOrDefault(r => r.Tag == selected_item);
+                if (selected_row != null)
+                {
+                    dgvItems.CurrentCell = selected_row.Cells[0];
+                    selected_row.Selected = true;
+                }
+            } finally
             {
-                return;
+                updating_item_list_selection = false;
             }
+        }
 
-            var selected_row = dgvItems.Rows
-                .OfType<DataGridViewRow>()
-                .FirstOrDefault(r => r.Tag == selected_item);
-            if (selected_row != null)
+        private void UpdateItemList(IEnumerable<Item> items)
+        {
+            updating_item_list = true;
+            try
             {
-                dgvItems.CurrentCell = selected_row.Cells[0];
-                selected_row.Selected = true;
+                dgvItems.Rows.Clear();
+
+                if (items == null)
+                {
+                    return;
+                }
+                
+                foreach (var item in items)
+                {
+                    var row = new DataGridViewRow();
+
+                    var name_cell = new DataGridViewTextImageCell()
+                    {
+                        Value = item.Name,
+                        Image = item.Image?.Resize(15, 15),
+                    };
+                    row.Cells.Add(name_cell);
+                    row.DefaultCellStyle.BackColor = item.Type.ToBackColor();
+                    row.Tag = item;
+
+                    dgvItems.Rows.Add(row);
+                }
+            }
+            finally
+            {
+                updating_item_list = false;
+                if (dgvItems.Rows.Count == 1)
+                {
+                    SelectedItem = dgvItems.Rows[0].Tag as Item;
+                }
             }
         }
 
@@ -160,7 +183,7 @@ namespace RoiCalc
             if (!string.IsNullOrWhiteSpace(txtFilter.Text))
             {
                 items = items.Where(i =>
-                    i.Name.ToLower().StartsWith(txtFilter.Text.ToLower()));
+                    i.Name.ToLower().Contains(txtFilter.Text.ToLower()));
             }
 
             if (filtered_types != null)
@@ -168,7 +191,8 @@ namespace RoiCalc
                 items = items.Where(i => filtered_types.Contains((int)i.Type - 1));
             }
 
-            UpdateItemList(items, SelectedItem);
+            UpdateItemList(items);
+            UpdateItemListSelection(SelectedItem);
         }
     }
 }
