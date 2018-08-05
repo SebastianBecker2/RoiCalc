@@ -227,7 +227,7 @@
             this.btnCalc.TabIndex = 3;
             this.btnCalc.Text = "Calc";
             this.btnCalc.UseVisualStyleBackColor = true;
-            this.btnCalc.Click += new System.EventHandler(this.btnCalc_Click);
+            this.btnCalc.Click += new System.EventHandler(this.BtnCalc_Click);
             // 
             // btnClearResult
             // 
@@ -237,7 +237,7 @@
             this.btnClearResult.TabIndex = 8;
             this.btnClearResult.Text = "Clear";
             this.btnClearResult.UseVisualStyleBackColor = true;
-            this.btnClearResult.Click += new System.EventHandler(this.btnClearResult_Click);
+            this.btnClearResult.Click += new System.EventHandler(this.BtnClearResult_Click);
             // 
             // btnLoadItemsFromFile
             // 
@@ -247,7 +247,7 @@
             this.btnLoadItemsFromFile.TabIndex = 9;
             this.btnLoadItemsFromFile.Text = "Load Items...";
             this.btnLoadItemsFromFile.UseVisualStyleBackColor = true;
-            this.btnLoadItemsFromFile.Click += new System.EventHandler(this.btnLoadItemsFromFile_Click);
+            this.btnLoadItemsFromFile.Click += new System.EventHandler(this.BtnLoadItemsFromFile_Click);
             // 
             // dataGridViewTextImageColumn1
             // 
@@ -299,7 +299,7 @@
             this.btnSelectItem.TabIndex = 10;
             this.btnSelectItem.Text = "Select Item...";
             this.btnSelectItem.UseVisualStyleBackColor = true;
-            this.btnSelectItem.Click += new System.EventHandler(this.btnSelectItem_Click);
+            this.btnSelectItem.Click += new System.EventHandler(this.BtnSelectItem_Click);
             // 
             // pibItemImage
             // 
@@ -327,7 +327,7 @@
             this.btnAbout.TabIndex = 13;
             this.btnAbout.Text = "About...";
             this.btnAbout.UseVisualStyleBackColor = true;
-            this.btnAbout.Click += new System.EventHandler(this.btnAbout_Click);
+            this.btnAbout.Click += new System.EventHandler(this.BtnAbout_Click);
             // 
             // RoiCalculator
             // 

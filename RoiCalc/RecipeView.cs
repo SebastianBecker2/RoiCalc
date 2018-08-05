@@ -19,8 +19,9 @@ namespace RoiCalc
 
         private class Requirement
         {
-            public PictureBox pibImage {
-                get { return pib_image; }
+            public PictureBox PibImage
+            {
+                get => pib_image;
                 set
                 {
                     if (pib_image != null)
@@ -37,8 +38,9 @@ namespace RoiCalc
                 }
             }
             private PictureBox pib_image;
-            public Label lblName {
-                get { return lbl_name; }
+            public Label LblName
+            {
+                get => lbl_name;
                 set
                 {
                     if (lbl_name != null)
@@ -55,9 +57,9 @@ namespace RoiCalc
                 }
             }
             private Label lbl_name;
-            public Label lblCount
+            public Label LblCount
             {
-                get { return lbl_count; }
+                get => lbl_count;
                 set
                 {
                     if (lbl_count != null)
@@ -77,15 +79,9 @@ namespace RoiCalc
 
             private Item Item;
 
-            private void OnClick(object sender, EventArgs e)
-            {
-                OnRequirementClick(Item);
-            }
+            private void OnClick(object sender, EventArgs e) => OnRequirementClick(Item);
 
-            private void OnDoubleClick(object sender, EventArgs e)
-            {
-                OnRequirementDoubleClick(Item);
-            }
+            private void OnDoubleClick(object sender, EventArgs e) => OnRequirementDoubleClick(Item);
 
             public event EventHandler<RequirementClickEventArgs> RequirementClick;
             protected virtual void OnRequirementClick(Item requirement)
@@ -109,18 +105,18 @@ namespace RoiCalc
             {
                 Item = item;
 
-                pibImage.Visible = (item != null);
-                lblName.Visible = (item != null);
-                lblCount.Visible = (item != null);
+                PibImage.Visible = (item != null);
+                LblName.Visible = (item != null);
+                LblCount.Visible = (item != null);
 
                 if (item == null)
                 {
                     return;
                 }
 
-                pibImage.Image = item.Image;
-                lblName.Text = item.Name;
-                lblCount.Text = count.ToString();
+                PibImage.Image = item.Image;
+                LblName.Text = item.Name;
+                LblCount.Text = count.ToString();
             }
         }
 
@@ -148,7 +144,7 @@ namespace RoiCalc
 
         public Item Recipe
         {
-            get { return current_recipe; }
+            get => current_recipe;
             set
             {
                 current_recipe = value;
@@ -164,19 +160,19 @@ namespace RoiCalc
             Requirements = new List<Requirement>()
             {
                 new Requirement() {
-                    pibImage = pibRequirement1Image,
-                    lblName = lblRequirement1Name,
-                    lblCount = lblRequirement1Count,
+                    PibImage = pibRequirement1Image,
+                    LblName = lblRequirement1Name,
+                    LblCount = lblRequirement1Count,
                 },
                 new Requirement() {
-                    pibImage = pibRequirement2Image,
-                    lblName = lblRequirement2Name,
-                    lblCount = lblRequirement2Count,
+                    PibImage = pibRequirement2Image,
+                    LblName = lblRequirement2Name,
+                    LblCount = lblRequirement2Count,
                 },
                 new Requirement() {
-                    pibImage = pibRequirement3Image,
-                    lblName = lblRequirement3Name,
-                    lblCount = lblRequirement3Count,
+                    PibImage = pibRequirement3Image,
+                    LblName = lblRequirement3Name,
+                    LblCount = lblRequirement3Count,
                 },
             };
             foreach (var req in Requirements)

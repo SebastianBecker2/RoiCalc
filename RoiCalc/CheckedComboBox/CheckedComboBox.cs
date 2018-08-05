@@ -68,7 +68,7 @@ namespace CheckComboBoxTest
                     else if (e.KeyCode == Keys.Delete)
                     {
                         // Delete unckecks all, [Shift + Delete] checks all.
-                        for (int i = 0; i < Items.Count; i++)
+                        for (var i = 0; i < Items.Count; i++)
                         {
                             SetItemChecked(i, e.Shift);
                         }
@@ -81,7 +81,7 @@ namespace CheckComboBoxTest
                 protected override void OnMouseMove(MouseEventArgs e)
                 {
                     base.OnMouseMove(e);
-                    int index = IndexFromPoint(e.Location);
+                    var index = IndexFromPoint(e.Location);
                     if ((index >= 0) && (index != curSelIndex))
                     {
                         curSelIndex = index;
@@ -119,7 +119,7 @@ namespace CheckComboBoxTest
             {
                 get
                 {
-                    string newStrValue = ccbParent.Text;
+                    var newStrValue = ccbParent.Text;
                     if ((oldStrValue.Length > 0) && (newStrValue.Length > 0))
                     {
                         return (oldStrValue.CompareTo(newStrValue) != 0);
@@ -146,7 +146,7 @@ namespace CheckComboBoxTest
                 InitializeComponent();
                 ShowInTaskbar = false;
                 // Add a handler to notify our parent of ItemCheck events.
-                List.ItemCheck += new ItemCheckEventHandler(cclb_ItemCheck);
+                List.ItemCheck += new ItemCheckEventHandler(Cclb_ItemCheck);
             }
 
             // ********************************************* Methods *********************************************
@@ -231,7 +231,7 @@ namespace CheckComboBoxTest
                 else
                 {
                     // Caller cancelled selection - need to restore the checked items to their original state.
-                    for (int i = 0; i < List.Items.Count; i++)
+                    for (var i = 0; i < List.Items.Count; i++)
                     {
                         List.SetItemChecked(i, checkedStateArr[i]);
                     }
@@ -255,7 +255,7 @@ namespace CheckComboBoxTest
                 oldStrValue = ccbParent.Text;
                 // Make a copy of the checked state of each item, in cace caller cancels selection.
                 checkedStateArr = new List<bool>(List.Items.Count);
-                for (int i = 0; i < List.Items.Count; i++)
+                for (var i = 0; i < List.Items.Count; i++)
                 {
                     checkedStateArr.Add(List.GetItemChecked(i));
                 }
@@ -264,8 +264,7 @@ namespace CheckComboBoxTest
             protected override void OnDeactivate(EventArgs e)
             {
                 base.OnDeactivate(e);
-                var ce = e as CCBoxEventArgs;
-                if (ce != null)
+                if (e is CCBoxEventArgs ce)
                 {
                     CloseDropdown(ce.AssignValues);
 
@@ -278,10 +277,7 @@ namespace CheckComboBoxTest
                 }
             }
 
-            private void cclb_ItemCheck(object sender, ItemCheckEventArgs e)
-            {
-                ccbParent.ItemCheck?.Invoke(sender, e);
-            }
+            private void Cclb_ItemCheck(object sender, ItemCheckEventArgs e) => ccbParent.ItemCheck?.Invoke(sender, e);
 
         } // end internal class Dropdown
 
@@ -296,29 +292,17 @@ namespace CheckComboBoxTest
 
         public bool CheckOnClick
         {
-            get { return dropdown.List.CheckOnClick; }
-            set { dropdown.List.CheckOnClick = value; }
+            get => dropdown.List.CheckOnClick;
+            set => dropdown.List.CheckOnClick = value;
         }
 
-        public new CheckedListBox.ObjectCollection Items
-        {
-            get { return dropdown.List.Items; }
-        }
+        public new CheckedListBox.ObjectCollection Items => dropdown.List.Items;
 
-        public CheckedListBox.CheckedItemCollection CheckedItems
-        {
-            get { return dropdown.List.CheckedItems; }
-        }
+        public CheckedListBox.CheckedItemCollection CheckedItems => dropdown.List.CheckedItems;
 
-        public CheckedListBox.CheckedIndexCollection CheckedIndices
-        {
-            get { return dropdown.List.CheckedIndices; }
-        }
+        public CheckedListBox.CheckedIndexCollection CheckedIndices => dropdown.List.CheckedIndices;
 
-        public bool ValueChanged
-        {
-            get { return dropdown.ValueChanged; }
-        }
+        public bool ValueChanged => dropdown.ValueChanged;
 
         // Event handler for when an item check state changes.
         public event ItemCheckEventHandler ItemCheck;
@@ -370,9 +354,9 @@ namespace CheckComboBoxTest
         {
             if (!dropdown.Visible)
             {
-                Rectangle rect = RectangleToScreen(ClientRectangle);
+                var rect = RectangleToScreen(ClientRectangle);
                 dropdown.Location = new Point(rect.X + Size.Width, rect.Y);
-                int count = dropdown.List.Items.Count;
+                var count = dropdown.List.Items.Count;
                 if (count > MaxDropDownItems)
                 {
                     count = MaxDropDownItems;

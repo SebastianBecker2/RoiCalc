@@ -23,7 +23,7 @@ namespace RoiCalc
 
         private Item SelectedItem
         {
-            get { return selected_item; }
+            get => selected_item;
             set
             {
                 selected_item = value;
@@ -31,7 +31,8 @@ namespace RoiCalc
                 {
                     lblItemName.Text = "Select an item";
                     return;
-                } else
+                }
+                else
                 {
                     lblItemName.Text = selected_item.Name;
                 }
@@ -92,17 +93,17 @@ namespace RoiCalc
                     continue;
                 }
 
-                if (!int.TryParse(line[0], out int type))
+                if (!int.TryParse(line[0], out var type))
                 {
                     continue;
                 }
 
-                if (!int.TryParse(line[2], out int count))
+                if (!int.TryParse(line[2], out var count))
                 {
                     continue;
                 }
 
-                if (!int.TryParse(line[3], out int interval))
+                if (!int.TryParse(line[3], out var interval))
                 {
                     continue;
                 }
@@ -133,7 +134,7 @@ namespace RoiCalc
                     continue;
                 }
 
-                if (!int.TryParse(line[5], out int count))
+                if (!int.TryParse(line[5], out var count))
                 {
                     continue;
                 }
@@ -267,19 +268,19 @@ namespace RoiCalc
             return results;
         }
 
-        private void btnCalc_Click(object sender, EventArgs e)
+        private void BtnCalc_Click(object sender, EventArgs e)
         {
             if (SelectedItem == null)
             {
                 return;
             }
 
-            if (!int.TryParse(txtCount.Text, out int count))
+            if (!int.TryParse(txtCount.Text, out var count))
             {
                 return;
             }
 
-            if (!int.TryParse(txtInterval.Text, out int interval))
+            if (!int.TryParse(txtInterval.Text, out var interval))
             {
                 return;
             }
@@ -296,13 +297,13 @@ namespace RoiCalc
             UpdateCalculationsView(Calculations);
         }
 
-        private void btnClearResult_Click(object sender, EventArgs e)
+        private void BtnClearResult_Click(object sender, EventArgs e)
         {
             Results = new ResultCollection();
             UpdateResultView(Results);
         }
 
-        private void btnLoadItemsFromFile_Click(object sender, EventArgs e)
+        private void BtnLoadItemsFromFile_Click(object sender, EventArgs e)
         {
             using (var dlg = new OpenFileDialog())
             {
@@ -323,7 +324,7 @@ namespace RoiCalc
             }
         }
 
-        private void btnSelectItem_Click(object sender, EventArgs e)
+        private void BtnSelectItem_Click(object sender, EventArgs e)
         {
             using (var dlg = new ItemSelectionDialog())
             {
@@ -339,7 +340,7 @@ namespace RoiCalc
             }
         }
 
-        private void btnAbout_Click(object sender, EventArgs e)
+        private void BtnAbout_Click(object sender, EventArgs e)
         {
             using (var dlg = new AboutDialog())
             {

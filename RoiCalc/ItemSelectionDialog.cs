@@ -14,7 +14,7 @@ namespace RoiCalc
 
         public Item SelectedItem
         {
-            get { return selected_item; }
+            get => selected_item;
             set
             {
                 selected_item = value;
@@ -43,7 +43,7 @@ namespace RoiCalc
             cmbFilter.ItemCheck += (s, e) => FilterChanged(GetSelectedTypeFilterIndices(e));
             txtFilter.TextChanged += (s, e) => FilterChanged(GetSelectedTypeFilterIndices(null));
 
-            dgvItems.DoubleClick += btnOk_Click;
+            dgvItems.DoubleClick += BtnOk_Click;
             dgvItems.SelectionChanged += DgvItems_SelectionChanged;
 
             rcvCurrentRecipe.RequirementDoubleClick += RcvCurrentRecipe_RequirementDoubleClick;
@@ -60,7 +60,7 @@ namespace RoiCalc
 
         private IEnumerable<int> GetSelectedTypeFilterIndices(ItemCheckEventArgs e = null)
         {
-            for (int i = 0; i < cmbFilter.Items.Count; i++)
+            for (var i = 0; i < cmbFilter.Items.Count; i++)
             {
                 if (e?.Index == i)
                 {
@@ -168,7 +168,7 @@ namespace RoiCalc
             }
         }
 
-        private void btnOk_Click(object sender, EventArgs e)
+        private void BtnOk_Click(object sender, EventArgs e)
         {
             if (SelectedItem != null)
             {
