@@ -28,9 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnOkay = new System.Windows.Forms.Button();
+            this.lblVersion = new System.Windows.Forms.Label();
+            this.timVersion = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label1
@@ -61,6 +64,18 @@
             this.btnOkay.Text = "OK";
             this.btnOkay.UseVisualStyleBackColor = true;
             // 
+            // lblVersion
+            // 
+            this.lblVersion.Location = new System.Drawing.Point(104, 31);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(100, 13);
+            this.lblVersion.TabIndex = 3;
+            this.lblVersion.Text = "Version:";
+            // 
+            // timVersion
+            // 
+            this.timVersion.Interval = 50;
+            // 
             // AboutDialog
             // 
             this.AcceptButton = this.btnOkay;
@@ -68,6 +83,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.btnOkay;
             this.ClientSize = new System.Drawing.Size(279, 144);
+            this.Controls.Add(this.lblVersion);
             this.Controls.Add(this.btnOkay);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -83,5 +99,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnOkay;
+        private System.Windows.Forms.Label lblVersion;
+        private System.Windows.Forms.Timer timVersion;
     }
 }
