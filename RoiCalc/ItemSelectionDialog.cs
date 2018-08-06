@@ -46,15 +46,15 @@ namespace RoiCalc
             dgvItems.DoubleClick += BtnOk_Click;
             dgvItems.SelectionChanged += DgvItems_SelectionChanged;
 
-            rcvCurrentRecipe.RequirementDoubleClick += RcvCurrentRecipe_RequirementDoubleClick;
+            rcvCurrentRecipe.IngredientDoubleClick += RcvCurrentRecipe_IngredientDoubleClick;
 
         }
 
-        private void RcvCurrentRecipe_RequirementDoubleClick(
+        private void RcvCurrentRecipe_IngredientDoubleClick(
             object sender, 
-            RecipeView.RequirementDoubleClickEventArgs e)
+            RecipeView.IngredientDoubleClickEventArgs e)
         {
-            SelectedItem = e.ClickedRequirement;
+            SelectedItem = e.ClickedIngredient;
             FilterChanged(GetSelectedTypeFilterIndices(null));
         }
 

@@ -139,7 +139,7 @@ namespace RoiCalc
                     continue;
                 }
 
-                items[line[1]].AddRequirement(items[line[4]], count);
+                items[line[1]].AddIngredient(items[line[4]], count);
 
                 if (line.Count() < 8)
                 {
@@ -151,7 +151,7 @@ namespace RoiCalc
                     continue;
                 }
 
-                items[line[1]].AddRequirement(items[line[6]], count);
+                items[line[1]].AddIngredient(items[line[6]], count);
 
                 if (line.Count() < 10)
                 {
@@ -163,7 +163,7 @@ namespace RoiCalc
                     continue;
                 }
 
-                items[line[1]].AddRequirement(items[line[8]], count);
+                items[line[1]].AddIngredient(items[line[8]], count);
             }
 
             return items;
@@ -248,10 +248,10 @@ namespace RoiCalc
             var required_count = request / production;
             results.Add(item, required_count);
 
-            foreach (var requirement in item.Requirements)
+            foreach (var Ingredient in item.Ingredients)
             {
-                var requirement_request = ((required_count * requirement.Value) / item.Interval);
-                var res = CalculateResults(requirement.Key, requirement_request);
+                var Ingredient_request = ((required_count * Ingredient.Value) / item.Interval);
+                var res = CalculateResults(Ingredient.Key, Ingredient_request);
                 foreach (var r in res)
                 {
                     if (results.ContainsKey(r.Key))

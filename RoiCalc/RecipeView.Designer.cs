@@ -28,57 +28,57 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblRequirement3Name = new System.Windows.Forms.Label();
-            this.lblRequirement2Name = new System.Windows.Forms.Label();
-            this.lblRequirement1Name = new System.Windows.Forms.Label();
+            this.lblIngredient3Name = new System.Windows.Forms.Label();
+            this.lblIngredient2Name = new System.Windows.Forms.Label();
+            this.lblIngredient1Name = new System.Windows.Forms.Label();
             this.lblInterval = new System.Windows.Forms.Label();
             this.lblItemName = new System.Windows.Forms.Label();
             this.lblItemCount = new System.Windows.Forms.Label();
-            this.lblRequirement3Count = new System.Windows.Forms.Label();
-            this.lblRequirement2Count = new System.Windows.Forms.Label();
-            this.lblRequirement1Count = new System.Windows.Forms.Label();
-            this.grbRequirements = new System.Windows.Forms.GroupBox();
-            this.pibRequirement2Image = new System.Windows.Forms.PictureBox();
-            this.pibRequirement1Image = new System.Windows.Forms.PictureBox();
-            this.pibRequirement3Image = new System.Windows.Forms.PictureBox();
+            this.lblIngredient3Count = new System.Windows.Forms.Label();
+            this.lblIngredient2Count = new System.Windows.Forms.Label();
+            this.lblIngredient1Count = new System.Windows.Forms.Label();
+            this.grbIngredients = new System.Windows.Forms.GroupBox();
+            this.pibIngredient2Image = new System.Windows.Forms.PictureBox();
+            this.pibIngredient1Image = new System.Windows.Forms.PictureBox();
+            this.pibIngredient3Image = new System.Windows.Forms.PictureBox();
             this.pibItemImage = new System.Windows.Forms.PictureBox();
             this.pibProduction = new System.Windows.Forms.PictureBox();
-            this.grbRequirements.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pibRequirement2Image)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pibRequirement1Image)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pibRequirement3Image)).BeginInit();
+            this.grbIngredients.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pibIngredient2Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pibIngredient1Image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pibIngredient3Image)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibItemImage)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibProduction)).BeginInit();
             this.SuspendLayout();
             // 
-            // lblRequirement3Name
+            // lblIngredient3Name
             // 
-            this.lblRequirement3Name.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblRequirement3Name.Location = new System.Drawing.Point(215, 70);
-            this.lblRequirement3Name.Name = "lblRequirement3Name";
-            this.lblRequirement3Name.Size = new System.Drawing.Size(80, 13);
-            this.lblRequirement3Name.TabIndex = 30;
-            this.lblRequirement3Name.Text = "[Item Name]";
-            this.lblRequirement3Name.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblIngredient3Name.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblIngredient3Name.Location = new System.Drawing.Point(215, 70);
+            this.lblIngredient3Name.Name = "lblIngredient3Name";
+            this.lblIngredient3Name.Size = new System.Drawing.Size(80, 13);
+            this.lblIngredient3Name.TabIndex = 30;
+            this.lblIngredient3Name.Text = "[Item Name]";
+            this.lblIngredient3Name.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // lblRequirement2Name
+            // lblIngredient2Name
             // 
-            this.lblRequirement2Name.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblRequirement2Name.Location = new System.Drawing.Point(101, 70);
-            this.lblRequirement2Name.Name = "lblRequirement2Name";
-            this.lblRequirement2Name.Size = new System.Drawing.Size(109, 13);
-            this.lblRequirement2Name.TabIndex = 28;
-            this.lblRequirement2Name.Text = "[Item Name]";
-            this.lblRequirement2Name.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblIngredient2Name.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIngredient2Name.Location = new System.Drawing.Point(101, 70);
+            this.lblIngredient2Name.Name = "lblIngredient2Name";
+            this.lblIngredient2Name.Size = new System.Drawing.Size(109, 13);
+            this.lblIngredient2Name.TabIndex = 28;
+            this.lblIngredient2Name.Text = "[Item Name]";
+            this.lblIngredient2Name.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // lblRequirement1Name
+            // lblIngredient1Name
             // 
-            this.lblRequirement1Name.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblRequirement1Name.Location = new System.Drawing.Point(15, 70);
-            this.lblRequirement1Name.Name = "lblRequirement1Name";
-            this.lblRequirement1Name.Size = new System.Drawing.Size(79, 13);
-            this.lblRequirement1Name.TabIndex = 26;
-            this.lblRequirement1Name.Text = "[Item Name]";
+            this.lblIngredient1Name.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblIngredient1Name.Location = new System.Drawing.Point(15, 70);
+            this.lblIngredient1Name.Name = "lblIngredient1Name";
+            this.lblIngredient1Name.Size = new System.Drawing.Size(79, 13);
+            this.lblIngredient1Name.TabIndex = 26;
+            this.lblIngredient1Name.Text = "[Item Name]";
             // 
             // lblInterval
             // 
@@ -110,85 +110,85 @@
             this.lblItemCount.TabIndex = 31;
             this.lblItemCount.Text = "[Item Count]";
             // 
-            // lblRequirement3Count
+            // lblIngredient3Count
             // 
-            this.lblRequirement3Count.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblRequirement3Count.AutoSize = true;
-            this.lblRequirement3Count.Location = new System.Drawing.Point(294, 36);
-            this.lblRequirement3Count.Name = "lblRequirement3Count";
-            this.lblRequirement3Count.Size = new System.Drawing.Size(64, 13);
-            this.lblRequirement3Count.TabIndex = 32;
-            this.lblRequirement3Count.Text = "[Item Count]";
+            this.lblIngredient3Count.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblIngredient3Count.AutoSize = true;
+            this.lblIngredient3Count.Location = new System.Drawing.Point(294, 36);
+            this.lblIngredient3Count.Name = "lblIngredient3Count";
+            this.lblIngredient3Count.Size = new System.Drawing.Size(64, 13);
+            this.lblIngredient3Count.TabIndex = 32;
+            this.lblIngredient3Count.Text = "[Item Count]";
             // 
-            // lblRequirement2Count
+            // lblIngredient2Count
             // 
-            this.lblRequirement2Count.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lblRequirement2Count.AutoSize = true;
-            this.lblRequirement2Count.Location = new System.Drawing.Point(186, 36);
-            this.lblRequirement2Count.Name = "lblRequirement2Count";
-            this.lblRequirement2Count.Size = new System.Drawing.Size(64, 13);
-            this.lblRequirement2Count.TabIndex = 33;
-            this.lblRequirement2Count.Text = "[Item Count]";
+            this.lblIngredient2Count.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblIngredient2Count.AutoSize = true;
+            this.lblIngredient2Count.Location = new System.Drawing.Point(186, 36);
+            this.lblIngredient2Count.Name = "lblIngredient2Count";
+            this.lblIngredient2Count.Size = new System.Drawing.Size(64, 13);
+            this.lblIngredient2Count.TabIndex = 33;
+            this.lblIngredient2Count.Text = "[Item Count]";
             // 
-            // lblRequirement1Count
+            // lblIngredient1Count
             // 
-            this.lblRequirement1Count.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblRequirement1Count.AutoSize = true;
-            this.lblRequirement1Count.Location = new System.Drawing.Point(78, 36);
-            this.lblRequirement1Count.Name = "lblRequirement1Count";
-            this.lblRequirement1Count.Size = new System.Drawing.Size(64, 13);
-            this.lblRequirement1Count.TabIndex = 34;
-            this.lblRequirement1Count.Text = "[Item Count]";
+            this.lblIngredient1Count.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblIngredient1Count.AutoSize = true;
+            this.lblIngredient1Count.Location = new System.Drawing.Point(78, 36);
+            this.lblIngredient1Count.Name = "lblIngredient1Count";
+            this.lblIngredient1Count.Size = new System.Drawing.Size(64, 13);
+            this.lblIngredient1Count.TabIndex = 34;
+            this.lblIngredient1Count.Text = "[Item Count]";
             // 
-            // grbRequirements
+            // grbIngredients
             // 
-            this.grbRequirements.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.grbIngredients.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.grbRequirements.Controls.Add(this.lblRequirement1Count);
-            this.grbRequirements.Controls.Add(this.lblRequirement2Count);
-            this.grbRequirements.Controls.Add(this.lblRequirement1Name);
-            this.grbRequirements.Controls.Add(this.lblRequirement3Count);
-            this.grbRequirements.Controls.Add(this.lblRequirement2Name);
-            this.grbRequirements.Controls.Add(this.lblRequirement3Name);
-            this.grbRequirements.Controls.Add(this.pibRequirement2Image);
-            this.grbRequirements.Controls.Add(this.pibRequirement1Image);
-            this.grbRequirements.Controls.Add(this.pibRequirement3Image);
-            this.grbRequirements.Location = new System.Drawing.Point(3, 138);
-            this.grbRequirements.Name = "grbRequirements";
-            this.grbRequirements.Size = new System.Drawing.Size(310, 94);
-            this.grbRequirements.TabIndex = 35;
-            this.grbRequirements.TabStop = false;
-            this.grbRequirements.Text = "Requirements";
+            this.grbIngredients.Controls.Add(this.lblIngredient1Count);
+            this.grbIngredients.Controls.Add(this.lblIngredient2Count);
+            this.grbIngredients.Controls.Add(this.lblIngredient1Name);
+            this.grbIngredients.Controls.Add(this.lblIngredient3Count);
+            this.grbIngredients.Controls.Add(this.lblIngredient2Name);
+            this.grbIngredients.Controls.Add(this.lblIngredient3Name);
+            this.grbIngredients.Controls.Add(this.pibIngredient2Image);
+            this.grbIngredients.Controls.Add(this.pibIngredient1Image);
+            this.grbIngredients.Controls.Add(this.pibIngredient3Image);
+            this.grbIngredients.Location = new System.Drawing.Point(3, 138);
+            this.grbIngredients.Name = "grbIngredients";
+            this.grbIngredients.Size = new System.Drawing.Size(310, 94);
+            this.grbIngredients.TabIndex = 35;
+            this.grbIngredients.TabStop = false;
+            this.grbIngredients.Text = "Ingredients";
             // 
-            // pibRequirement2Image
+            // pibIngredient2Image
             // 
-            this.pibRequirement2Image.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pibRequirement2Image.Location = new System.Drawing.Point(130, 17);
-            this.pibRequirement2Image.Name = "pibRequirement2Image";
-            this.pibRequirement2Image.Size = new System.Drawing.Size(50, 50);
-            this.pibRequirement2Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pibRequirement2Image.TabIndex = 27;
-            this.pibRequirement2Image.TabStop = false;
+            this.pibIngredient2Image.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pibIngredient2Image.Location = new System.Drawing.Point(130, 17);
+            this.pibIngredient2Image.Name = "pibIngredient2Image";
+            this.pibIngredient2Image.Size = new System.Drawing.Size(50, 50);
+            this.pibIngredient2Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pibIngredient2Image.TabIndex = 27;
+            this.pibIngredient2Image.TabStop = false;
             // 
-            // pibRequirement1Image
+            // pibIngredient1Image
             // 
-            this.pibRequirement1Image.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.pibRequirement1Image.Location = new System.Drawing.Point(22, 17);
-            this.pibRequirement1Image.Name = "pibRequirement1Image";
-            this.pibRequirement1Image.Size = new System.Drawing.Size(50, 50);
-            this.pibRequirement1Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pibRequirement1Image.TabIndex = 25;
-            this.pibRequirement1Image.TabStop = false;
+            this.pibIngredient1Image.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.pibIngredient1Image.Location = new System.Drawing.Point(22, 17);
+            this.pibIngredient1Image.Name = "pibIngredient1Image";
+            this.pibIngredient1Image.Size = new System.Drawing.Size(50, 50);
+            this.pibIngredient1Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pibIngredient1Image.TabIndex = 25;
+            this.pibIngredient1Image.TabStop = false;
             // 
-            // pibRequirement3Image
+            // pibIngredient3Image
             // 
-            this.pibRequirement3Image.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.pibRequirement3Image.Location = new System.Drawing.Point(238, 17);
-            this.pibRequirement3Image.Name = "pibRequirement3Image";
-            this.pibRequirement3Image.Size = new System.Drawing.Size(50, 50);
-            this.pibRequirement3Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pibRequirement3Image.TabIndex = 29;
-            this.pibRequirement3Image.TabStop = false;
+            this.pibIngredient3Image.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pibIngredient3Image.Location = new System.Drawing.Point(238, 17);
+            this.pibIngredient3Image.Name = "pibIngredient3Image";
+            this.pibIngredient3Image.Size = new System.Drawing.Size(50, 50);
+            this.pibIngredient3Image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pibIngredient3Image.TabIndex = 29;
+            this.pibIngredient3Image.TabStop = false;
             // 
             // pibItemImage
             // 
@@ -215,7 +215,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.grbRequirements);
+            this.Controls.Add(this.grbIngredients);
             this.Controls.Add(this.lblItemCount);
             this.Controls.Add(this.lblItemName);
             this.Controls.Add(this.pibItemImage);
@@ -224,11 +224,11 @@
             this.MinimumSize = new System.Drawing.Size(316, 235);
             this.Name = "RecipeView";
             this.Size = new System.Drawing.Size(316, 235);
-            this.grbRequirements.ResumeLayout(false);
-            this.grbRequirements.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pibRequirement2Image)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pibRequirement1Image)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pibRequirement3Image)).EndInit();
+            this.grbIngredients.ResumeLayout(false);
+            this.grbIngredients.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pibIngredient2Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pibIngredient1Image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pibIngredient3Image)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibItemImage)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pibProduction)).EndInit();
             this.ResumeLayout(false);
@@ -238,20 +238,20 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lblRequirement3Name;
-        private System.Windows.Forms.PictureBox pibRequirement3Image;
-        private System.Windows.Forms.Label lblRequirement2Name;
-        private System.Windows.Forms.PictureBox pibRequirement2Image;
-        private System.Windows.Forms.Label lblRequirement1Name;
-        private System.Windows.Forms.PictureBox pibRequirement1Image;
+        private System.Windows.Forms.Label lblIngredient3Name;
+        private System.Windows.Forms.PictureBox pibIngredient3Image;
+        private System.Windows.Forms.Label lblIngredient2Name;
+        private System.Windows.Forms.PictureBox pibIngredient2Image;
+        private System.Windows.Forms.Label lblIngredient1Name;
+        private System.Windows.Forms.PictureBox pibIngredient1Image;
         private System.Windows.Forms.Label lblInterval;
         private System.Windows.Forms.PictureBox pibProduction;
         private System.Windows.Forms.PictureBox pibItemImage;
         private System.Windows.Forms.Label lblItemName;
         private System.Windows.Forms.Label lblItemCount;
-        private System.Windows.Forms.Label lblRequirement3Count;
-        private System.Windows.Forms.Label lblRequirement2Count;
-        private System.Windows.Forms.Label lblRequirement1Count;
-        private System.Windows.Forms.GroupBox grbRequirements;
+        private System.Windows.Forms.Label lblIngredient3Count;
+        private System.Windows.Forms.Label lblIngredient2Count;
+        private System.Windows.Forms.Label lblIngredient1Count;
+        private System.Windows.Forms.GroupBox grbIngredients;
     }
 }

@@ -11,13 +11,13 @@ namespace RoiCalc
         public string Name { get; set; }
         public Image Image { get; set; }
 
-        public IDictionary<Item, int> Requirements { get; set; } = new Dictionary<Item, int>();
+        public IDictionary<Item, int> Ingredients { get; set; } = new Dictionary<Item, int>();
 
         public Item() { }
 
-        public void AddRequirement(Item item, int count)
+        public void AddIngredient(Item item, int count)
         {
-            Requirements.Add(item, count);
+            Ingredients.Add(item, count);
         }
     }
 }

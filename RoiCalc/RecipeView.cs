@@ -7,17 +7,17 @@ namespace RoiCalc
 {
     partial class RecipeView : UserControl
     {
-        public class RequirementClickEventArgs : EventArgs
+        public class IngredientClickEventArgs : EventArgs
         {
             public Item DisplayedRecipe { get; set; }
-            public Item ClickedRequirement { get; set; }
+            public Item ClickedIngredient { get; set; }
         }
 
-        public class RequirementDoubleClickEventArgs : RequirementClickEventArgs
+        public class IngredientDoubleClickEventArgs : IngredientClickEventArgs
         {
         }
 
-        private class Requirement
+        private class Ingredient
         {
             public PictureBox PibImage
             {
@@ -79,25 +79,25 @@ namespace RoiCalc
 
             private Item Item;
 
-            private void OnClick(object sender, EventArgs e) => OnRequirementClick(Item);
+            private void OnClick(object sender, EventArgs e) => OnIngredientClick(Item);
 
-            private void OnDoubleClick(object sender, EventArgs e) => OnRequirementDoubleClick(Item);
+            private void OnDoubleClick(object sender, EventArgs e) => OnIngredientDoubleClick(Item);
 
-            public event EventHandler<RequirementClickEventArgs> RequirementClick;
-            protected virtual void OnRequirementClick(Item requirement)
+            public event EventHandler<IngredientClickEventArgs> IngredientClick;
+            protected virtual void OnIngredientClick(Item Ingredient)
             {
-                RequirementClick?.Invoke(this, new RequirementClickEventArgs()
+                IngredientClick?.Invoke(this, new IngredientClickEventArgs()
                 {
-                    ClickedRequirement = requirement,
+                    ClickedIngredient = Ingredient,
                 });
             }
 
-            public event EventHandler<RequirementDoubleClickEventArgs> RequirementDoubleClick;
-            protected virtual void OnRequirementDoubleClick(Item requirement)
+            public event EventHandler<IngredientDoubleClickEventArgs> IngredientDoubleClick;
+            protected virtual void OnIngredientDoubleClick(Item Ingredient)
             {
-                RequirementDoubleClick?.Invoke(this, new RequirementDoubleClickEventArgs()
+                IngredientDoubleClick?.Invoke(this, new IngredientDoubleClickEventArgs()
                 {
-                    ClickedRequirement = requirement,
+                    ClickedIngredient = Ingredient,
                 });
             }
 
@@ -120,25 +120,25 @@ namespace RoiCalc
             }
         }
 
-        private IEnumerable<Requirement> Requirements { get; set; }
+        private IEnumerable<Ingredient> Ingredients { get; set; }
 
-        public event EventHandler<RequirementClickEventArgs> RequirementClick;
-        protected virtual void OnRequirementClick(Item requirement)
+        public event EventHandler<IngredientClickEventArgs> IngredientClick;
+        protected virtual void OnIngredientClick(Item Ingredient)
         {
-            RequirementClick?.Invoke(this, new RequirementClickEventArgs()
+            IngredientClick?.Invoke(this, new IngredientClickEventArgs()
             {
                 DisplayedRecipe = current_recipe,
-                ClickedRequirement = requirement,
+                ClickedIngredient = Ingredient,
             });
         }
 
-        public event EventHandler<RequirementDoubleClickEventArgs> RequirementDoubleClick;
-        protected virtual void OnRequirementDoubleClick(Item requirement)
+        public event EventHandler<IngredientDoubleClickEventArgs> IngredientDoubleClick;
+        protected virtual void OnIngredientDoubleClick(Item Ingredient)
         {
-            RequirementDoubleClick?.Invoke(this, new RequirementDoubleClickEventArgs()
+            IngredientDoubleClick?.Invoke(this, new IngredientDoubleClickEventArgs()
             {
                 DisplayedRecipe = current_recipe,
-                ClickedRequirement = requirement,
+                ClickedIngredient = Ingredient,
             });
         }
 
@@ -157,28 +157,28 @@ namespace RoiCalc
         {
             InitializeComponent();
 
-            Requirements = new List<Requirement>()
+            Ingredients = new List<Ingredient>()
             {
-                new Requirement() {
-                    PibImage = pibRequirement1Image,
-                    LblName = lblRequirement1Name,
-                    LblCount = lblRequirement1Count,
+                new Ingredient() {
+                    PibImage = pibIngredient1Image,
+                    LblName = lblIngredient1Name,
+                    LblCount = lblIngredient1Count,
                 },
-                new Requirement() {
-                    PibImage = pibRequirement2Image,
-                    LblName = lblRequirement2Name,
-                    LblCount = lblRequirement2Count,
+                new Ingredient() {
+                    PibImage = pibIngredient2Image,
+                    LblName = lblIngredient2Name,
+                    LblCount = lblIngredient2Count,
                 },
-                new Requirement() {
-                    PibImage = pibRequirement3Image,
-                    LblName = lblRequirement3Name,
-                    LblCount = lblRequirement3Count,
+                new Ingredient() {
+                    PibImage = pibIngredient3Image,
+                    LblName = lblIngredient3Name,
+                    LblCount = lblIngredient3Count,
                 },
             };
-            foreach (var req in Requirements)
+            foreach (var ingredient in Ingredients)
             {
-                req.RequirementClick += (s, e) => OnRequirementClick(e.ClickedRequirement);
-                req.RequirementDoubleClick += (s, e) => OnRequirementDoubleClick(e.ClickedRequirement);
+                ingredient.IngredientClick += (s, e) => OnIngredientClick(e.ClickedIngredient);
+                ingredient.IngredientDoubleClick += (s, e) => OnIngredientDoubleClick(e.ClickedIngredient);
             }
         }
 
@@ -192,7 +192,7 @@ namespace RoiCalc
                 lblInterval.Text = string.Empty;
 
 
-                grbRequirements.Visible = false;
+                grbIngredients.Visible = false;
                 return;
             }
 
@@ -201,12 +201,12 @@ namespace RoiCalc
             lblItemCount.Text = item.Count.ToString();
             lblInterval.Text = item.Interval.ToString();
 
-            grbRequirements.Visible = item.Requirements.Any();
+            grbIngredients.Visible = item.Ingredients.Any();
 
-            foreach (var req in Requirements
-                .Merge(item.Requirements, (View, Req) => new { View, Item = Req.Key, Count = Req.Value }))
+            foreach (var ingredient in Ingredients
+                .Merge(item.Ingredients, (View, Req) => new { View, Item = Req.Key, Count = Req.Value }))
             {
-                req.View.SetItem(req.Item, req.Count);
+                ingredient.View.SetItem(ingredient.Item, ingredient.Count);
             }
         }
     }
