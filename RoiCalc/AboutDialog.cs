@@ -14,7 +14,7 @@ namespace RoiCalc
             VersionPrefix = lblVersion.Text;
             timVersion.Tick += (s, e) =>
             {
-                lblVersion.Text = $"{VersionPrefix} {rnd.Next(0, 9999):D4}";
+                lblVersion.Text = $"{VersionPrefix} {rnd.Next(10,25)}.{rnd.Next(0,9):D1}.{rnd.Next(0, 999):D3}";
             };
             timVersion.Start();
         }
