@@ -156,7 +156,8 @@
             this.dgvCalculations.AllowUserToDeleteRows = false;
             this.dgvCalculations.AllowUserToResizeColumns = false;
             this.dgvCalculations.AllowUserToResizeRows = false;
-            this.dgvCalculations.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.dgvCalculations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvCalculations.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCalculations.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clmCalculationName,
@@ -164,7 +165,7 @@
             this.clmCalculationInterval,
             this.clmCaclulationDelete,
             this.clmCalculationAddResult});
-            this.dgvCalculations.Location = new System.Drawing.Point(12, 157);
+            this.dgvCalculations.Location = new System.Drawing.Point(12, 135);
             this.dgvCalculations.MultiSelect = false;
             this.dgvCalculations.Name = "dgvCalculations";
             this.dgvCalculations.ReadOnly = true;
@@ -175,7 +176,7 @@
             this.dgvCalculations.ShowCellToolTips = false;
             this.dgvCalculations.ShowEditingIcon = false;
             this.dgvCalculations.ShowRowErrors = false;
-            this.dgvCalculations.Size = new System.Drawing.Size(316, 140);
+            this.dgvCalculations.Size = new System.Drawing.Size(316, 162);
             this.dgvCalculations.TabIndex = 7;
             this.dgvCalculations.TabStop = false;
             // 
@@ -347,7 +348,7 @@
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
             // 
             // closeToolStripMenuItem
             // 
@@ -366,7 +367,7 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
