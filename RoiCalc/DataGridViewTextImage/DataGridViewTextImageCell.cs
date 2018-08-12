@@ -81,9 +81,6 @@ namespace ImbaControls
 			}
 		}
 
-		private DataGridViewTextImageColumn OwningTextAndImageColumn
-		{
-			get { return this.OwningColumn as DataGridViewTextImageColumn; }
-		}
-	}
+        private DataGridViewTextImageColumn OwningTextAndImageColumn => this.OwningColumn as DataGridViewTextImageColumn;
+    }
 }
