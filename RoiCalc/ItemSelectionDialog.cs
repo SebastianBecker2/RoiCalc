@@ -40,25 +40,48 @@ namespace RoiCalc
                 });
                 cmbFilter.SetItemChecked((int)type - 1, true);
             }
-            cmbFilter.ItemCheck += (s, e) => FilterChanged(GetSelectedTypeFilterIndices(e));
-            txtFilter.TextChanged += (s, e) => FilterChanged(GetSelectedTypeFilterIndices(null));
+            cmbFilter.ItemCheck += CmbFilter_ItemCheck;
+            txtFilter.TextChanged += TxtFilter_TextChanged;
 
             dgvItems.DoubleClick += BtnOk_Click;
             dgvItems.SelectionChanged += DgvItems_SelectionChanged;
 
-            rcvCurrentRecipe.IngredientDoubleClick += RcvCurrentRecipe_IngredientDoubleClick;
+            rcvCurrentRecipe.IngredientClick += RcvCurrentRecipe_IngredientClick;
 
         }
 
-        private void RcvCurrentRecipe_IngredientDoubleClick(
-            object sender, 
-            RecipeView.IngredientDoubleClickEventArgs e)
+        private void TxtFilter_TextChanged(object sender, EventArgs e) {
+            var filtered_items = GetFilteredItems(txtFilter.Text, GetFilterTypes());
+            if (filtered_items.Count() == 1)
+            {
+                SelectedItem = filtered_items.First();
+            }
+            UpdateItemList(filtered_items);
+            UpdateItemListSelection(SelectedItem);
+        }
+
+        private void CmbFilter_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            SelectedItem = e.ClickedIngredient;
-            FilterChanged(GetSelectedTypeFilterIndices(null));
+            var filtered_items = GetFilteredItems(txtFilter.Text, GetFilterTypes(e));
+            if (filtered_items.Count() == 1)
+            {
+                SelectedItem = filtered_items.First();
+            }
+            UpdateItemList(filtered_items);
+            UpdateItemListSelection(SelectedItem);
         }
 
-        private IEnumerable<int> GetSelectedTypeFilterIndices(ItemCheckEventArgs e = null)
+        private void RcvCurrentRecipe_IngredientClick(
+            object sender,
+            RecipeView.IngredientClickEventArgs e)
+        {
+            var filtered_items = GetFilteredItems(txtFilter.Text, GetFilterTypes());
+            UpdateItemList(filtered_items);
+            SelectedItem = e.ClickedIngredient;
+            UpdateItemListSelection(SelectedItem);
+        }
+
+        private IEnumerable<int> GetFilterTypes(ItemCheckEventArgs e = null)
         {
             for (var i = 0; i < cmbFilter.Items.Count; i++)
             {
@@ -124,7 +147,8 @@ namespace RoiCalc
                     dgvItems.CurrentCell = selected_row.Cells[0];
                     selected_row.Selected = true;
                 }
-            } finally
+            }
+            finally
             {
                 updating_item_list_selection = false;
             }
@@ -141,7 +165,7 @@ namespace RoiCalc
                 {
                     return;
                 }
-                
+
                 foreach (var item in items)
                 {
                     var row = new DataGridViewRow();
@@ -161,10 +185,6 @@ namespace RoiCalc
             finally
             {
                 updating_item_list = false;
-                if (dgvItems.Rows.Count == 1)
-                {
-                    SelectedItem = dgvItems.Rows[0].Tag as Item;
-                }
             }
         }
 
@@ -175,24 +195,25 @@ namespace RoiCalc
                 DialogResult = DialogResult.OK;
             }
         }
-
-        private void FilterChanged(IEnumerable<int> filtered_types)
+        
+        private IEnumerable<Item> GetFilteredItems(
+            string filter_text,
+            IEnumerable<int> filter_types)
         {
             var items = Items;
 
-            if (!string.IsNullOrWhiteSpace(txtFilter.Text))
+            if (!string.IsNullOrWhiteSpace(filter_text))
             {
-                items = items.Where(i =>
-                    i.Name.ToLower().Contains(txtFilter.Text.ToLower()));
+                filter_text = filter_text.ToLower();
+                items = items.Where(i => i.Name.ToLower().Contains(filter_text));
             }
 
-            if (filtered_types != null)
+            if (filter_types != null)
             {
-                items = items.Where(i => filtered_types.Contains((int)i.Type - 1));
+                items = items.Where(i => filter_types.Contains((int)i.Type - 1));
             }
 
-            UpdateItemList(items);
-            UpdateItemListSelection(SelectedItem);
+            return items;
         }
     }
 }
