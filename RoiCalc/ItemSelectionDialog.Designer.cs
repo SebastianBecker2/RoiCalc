@@ -78,7 +78,7 @@
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(75, 23);
             this.btnOk.TabIndex = 3;
-            this.btnOk.Text = "OK";
+            this.btnOk.Text = "&OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.BtnOk_Click);
             // 
@@ -90,7 +90,7 @@
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 4;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "&Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // dataGridViewTextImageColumn1
@@ -117,14 +117,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Filter:";
             // 
-            // recipeView1
+            // rcvCurrentRecipe
             // 
             this.rcvCurrentRecipe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.rcvCurrentRecipe.Location = new System.Drawing.Point(219, 12);
             this.rcvCurrentRecipe.MinimumSize = new System.Drawing.Size(316, 255);
-            this.rcvCurrentRecipe.Name = "recipeView1";
+            this.rcvCurrentRecipe.Name = "rcvCurrentRecipe";
+            this.rcvCurrentRecipe.Recipe = null;
             this.rcvCurrentRecipe.Size = new System.Drawing.Size(316, 323);
             this.rcvCurrentRecipe.TabIndex = 5;
             // 

@@ -61,7 +61,7 @@
             this.btnOkay.Name = "btnOkay";
             this.btnOkay.Size = new System.Drawing.Size(75, 23);
             this.btnOkay.TabIndex = 2;
-            this.btnOkay.Text = "OK";
+            this.btnOkay.Text = "&OK";
             this.btnOkay.UseVisualStyleBackColor = true;
             // 
             // lblVersion

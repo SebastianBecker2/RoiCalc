@@ -232,7 +232,7 @@
             this.btnCalc.Name = "btnCalc";
             this.btnCalc.Size = new System.Drawing.Size(79, 23);
             this.btnCalc.TabIndex = 3;
-            this.btnCalc.Text = "Calculate ->";
+            this.btnCalc.Text = "&Calculate ->";
             this.btnCalc.UseVisualStyleBackColor = true;
             this.btnCalc.Click += new System.EventHandler(this.BtnCalc_Click);
             // 
@@ -242,7 +242,7 @@
             this.btnClearResult.Name = "btnClearResult";
             this.btnClearResult.Size = new System.Drawing.Size(79, 23);
             this.btnClearResult.TabIndex = 8;
-            this.btnClearResult.Text = "Clear Result";
+            this.btnClearResult.Text = "Clear &Result";
             this.btnClearResult.UseVisualStyleBackColor = true;
             this.btnClearResult.Click += new System.EventHandler(this.BtnClearResult_Click);
             // 
@@ -328,20 +328,20 @@
             this.closeToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.fileToolStripMenuItem.Text = "&File";
             // 
             // selectItemToolStripMenuItem
             // 
             this.selectItemToolStripMenuItem.Name = "selectItemToolStripMenuItem";
-            this.selectItemToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.selectItemToolStripMenuItem.Text = "Select Item...";
+            this.selectItemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectItemToolStripMenuItem.Text = "&Select Item...";
             this.selectItemToolStripMenuItem.Click += new System.EventHandler(this.OnSelectItem);
             // 
             // loadItemsToolStripMenuItem
             // 
             this.loadItemsToolStripMenuItem.Name = "loadItemsToolStripMenuItem";
-            this.loadItemsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.loadItemsToolStripMenuItem.Text = "Load Items...";
+            this.loadItemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadItemsToolStripMenuItem.Text = "&Load Items...";
             this.loadItemsToolStripMenuItem.Click += new System.EventHandler(this.LoadItemsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
@@ -352,8 +352,8 @@
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
-            this.closeToolStripMenuItem.Text = "Close";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Text = "C&lose";
             // 
             // helpToolStripMenuItem
             // 
@@ -361,13 +361,13 @@
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
             this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Text = "&Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "&About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.AboutToolStripMenuItem_Click);
             // 
             // RoiCalculator
