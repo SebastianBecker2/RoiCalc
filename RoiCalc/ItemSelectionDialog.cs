@@ -3,6 +3,7 @@ using ImbaControls;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -45,12 +46,21 @@ namespace RoiCalc
 
             dgvItems.DoubleClick += BtnOk_Click;
             dgvItems.SelectionChanged += DgvItems_SelectionChanged;
+            dgvItems.KeyDown += (s, e) =>
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    e.Handled = true;
+                    BtnOk_Click(s, e);
+                }
+            };
 
             rcvCurrentRecipe.IngredientClick += RcvCurrentRecipe_IngredientClick;
 
         }
 
-        private void TxtFilter_TextChanged(object sender, EventArgs e) {
+        private void TxtFilter_TextChanged(object sender, EventArgs e)
+        {
             var filtered_items = GetFilteredItems(txtFilter.Text, GetFilterTypes());
             if (filtered_items.Count() == 1)
             {
@@ -195,7 +205,7 @@ namespace RoiCalc
                 DialogResult = DialogResult.OK;
             }
         }
-        
+
         private IEnumerable<Item> GetFilteredItems(
             string filter_text,
             IEnumerable<int> filter_types)

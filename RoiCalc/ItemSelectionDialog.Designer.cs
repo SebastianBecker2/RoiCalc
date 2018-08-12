@@ -61,6 +61,7 @@
             this.dgvItems.ShowCellToolTips = false;
             this.dgvItems.ShowEditingIcon = false;
             this.dgvItems.Size = new System.Drawing.Size(201, 325);
+            this.dgvItems.StandardTab = true;
             this.dgvItems.TabIndex = 2;
             // 
             // clmItemName
