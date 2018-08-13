@@ -142,6 +142,15 @@ namespace RoiCalc
             });
         }
 
+        public class ItemClickEventArgs : EventArgs
+        {
+            public Item Item { get; set; }
+        }
+
+        public class ItemDoubleClickEventArgs : ItemClickEventArgs
+        {
+        }
+
         public Item Recipe
         {
             get => current_recipe;
@@ -152,6 +161,18 @@ namespace RoiCalc
             }
         }
         private Item current_recipe;
+
+        public event EventHandler<ItemClickEventArgs> ItemClick;
+        protected virtual void OnItemClick(Item item)
+        {
+            ItemClick?.Invoke(this, new ItemClickEventArgs() { Item = item });
+        }
+
+        public event EventHandler<ItemDoubleClickEventArgs> ItemDoubleClick;
+        protected virtual void OnItemDoubleClick(Item item)
+        {
+            ItemDoubleClick?.Invoke(this, new ItemDoubleClickEventArgs() { Item = item });
+        }
 
         public RecipeView()
         {
@@ -180,6 +201,13 @@ namespace RoiCalc
                 ingredient.IngredientClick += (s, e) => OnIngredientClick(e.ClickedIngredient);
                 ingredient.IngredientDoubleClick += (s, e) => OnIngredientDoubleClick(e.ClickedIngredient);
             }
+
+            pibItemImage.Click += (s, e) => OnItemClick(Recipe);
+            pibItemImage.DoubleClick += (s, e) => OnItemDoubleClick(Recipe);
+            lblItemCount.Click += (s, e) => OnItemClick(Recipe);
+            lblItemCount.DoubleClick += (s, e) => OnItemDoubleClick(Recipe);
+            lblItemName.Click += (s, e) => OnItemClick(Recipe);
+            lblItemName.DoubleClick += (s, e) => OnItemDoubleClick(Recipe);
         }
 
         private void SetItem(Item item)

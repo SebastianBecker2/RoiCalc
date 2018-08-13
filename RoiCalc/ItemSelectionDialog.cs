@@ -55,7 +55,13 @@ namespace RoiCalc
             };
 
             rcvCurrentRecipe.IngredientClick += RcvCurrentRecipe_IngredientClick;
+            rcvCurrentRecipe.ItemDoubleClick += RcvCurrentRecipe_ItemDoubleClick;
+        }
 
+        private void RcvCurrentRecipe_ItemDoubleClick(object sender, RecipeView.ItemClickEventArgs e)
+        {
+            var items = Items.Where(i => i.Ingredients.ContainsKey(e.Item));
+            UpdateItemList(items);
         }
 
         private void TxtFilter_TextChanged(object sender, EventArgs e)
