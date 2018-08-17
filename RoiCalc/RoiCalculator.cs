@@ -76,7 +76,7 @@ namespace RoiCalc
                 UpdateResultView(Results);
             }
         }
-        
+
         private IDictionary<string, Item> ReadItems(string path)
         {
             var res_path = Path.GetDirectoryName(path);
@@ -237,6 +237,19 @@ namespace RoiCalc
             }
         }
 
+        private void SelectCalculation(Calculation calculation)
+        {
+            dgvCalculations.ClearSelection();
+
+            var selected_row = dgvCalculations.Rows
+                .OfType<DataGridViewRow>()
+                .FirstOrDefault(r => calculation.Equals(r.Tag as Calculation));
+            if (selected_row != null)
+            {
+                dgvCalculations.CurrentCell = selected_row.Cells[0];
+                selected_row.Selected = true;
+            }
+        }
 
         private void BtnCalc_Click(object sender, EventArgs e)
         {
@@ -258,8 +271,11 @@ namespace RoiCalc
             var calculation = new Calculation(SelectedItem, count, interval);
             Results = calculation.CalculateResults();
             UpdateResultView(Results);
-            Calculations.Add(calculation);
-            UpdateCalculationsView(Calculations);
+            if (Calculations.Add(calculation))
+            {
+                UpdateCalculationsView(Calculations);
+            }
+            SelectCalculation(calculation);
         }
 
         private void BtnClearResult_Click(object sender, EventArgs e)
