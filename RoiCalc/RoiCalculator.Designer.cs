@@ -114,6 +114,7 @@
             this.txtCount.Name = "txtCount";
             this.txtCount.Size = new System.Drawing.Size(100, 20);
             this.txtCount.TabIndex = 1;
+            this.txtCount.Text = "1";
             // 
             // txtInterval
             // 
@@ -121,6 +122,7 @@
             this.txtInterval.Name = "txtInterval";
             this.txtInterval.Size = new System.Drawing.Size(100, 20);
             this.txtInterval.TabIndex = 2;
+            this.txtInterval.Text = "15";
             // 
             // label1
             // 
@@ -334,26 +336,26 @@
             // selectItemToolStripMenuItem
             // 
             this.selectItemToolStripMenuItem.Name = "selectItemToolStripMenuItem";
-            this.selectItemToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.selectItemToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.selectItemToolStripMenuItem.Text = "&Select Item...";
             this.selectItemToolStripMenuItem.Click += new System.EventHandler(this.OnSelectItem);
             // 
             // loadItemsToolStripMenuItem
             // 
             this.loadItemsToolStripMenuItem.Name = "loadItemsToolStripMenuItem";
-            this.loadItemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.loadItemsToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.loadItemsToolStripMenuItem.Text = "&Load Items...";
             this.loadItemsToolStripMenuItem.Click += new System.EventHandler(this.LoadItemsToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(138, 6);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.closeToolStripMenuItem.Text = "C&lose";
             // 
             // helpToolStripMenuItem
