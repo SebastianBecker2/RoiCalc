@@ -35,8 +35,7 @@ namespace RoiCalc
                 case ItemType.CarPart:
                     return Color.MediumOrchid;
                 default:
-                    throw new InvalidOperationException("The value of argument " + 
-                        nameof(type) + " is invalid");
+                    throw new ArgumentOutOfRangeException(nameof(type));
             }
         }
 
@@ -59,8 +58,7 @@ namespace RoiCalc
                 case ItemType.CarPart:
                     return "Car Part";
                 default:
-                    throw new InvalidOperationException("The value of argument " +
-                        nameof(type) + " is invalid");
+                    throw new ArgumentOutOfRangeException(nameof(type));
             }
         }
     }

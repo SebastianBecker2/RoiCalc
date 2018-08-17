@@ -407,7 +407,7 @@ namespace CheckComboBoxTest
         {
             if (index < 0 || index > Items.Count)
             {
-                throw new ArgumentOutOfRangeException("index", "value out of range");
+                throw new ArgumentOutOfRangeException(nameof(index), "value out of range");
             }
             else
             {

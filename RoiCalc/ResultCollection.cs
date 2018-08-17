@@ -18,12 +18,12 @@ namespace RoiCalc
         {
             if (lhs == null)
             {
-                throw new ArgumentNullException("Argument '" + nameof(lhs) + "' is null");
+                throw new ArgumentNullException(nameof(lhs));
             }
 
             if (rhs == null)
             {
-                throw new ArgumentNullException("Argument '" + nameof(rhs) + "' is null");
+                throw new ArgumentNullException(nameof(rhs));
             }
 
             var results = new ResultCollection(lhs);
