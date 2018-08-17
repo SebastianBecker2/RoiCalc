@@ -18,8 +18,8 @@ namespace RoiCalc
 
         private ResultCollection Results { get; set; }
 
-        private IList<Calculation> Calculations { get; set; }
-            = new List<Calculation>();
+        private ISet<Calculation> Calculations { get; set; }
+            = new HashSet<Calculation>();
 
         private Item SelectedItem
         {
@@ -67,12 +67,12 @@ namespace RoiCalc
 
             if (e.ColumnIndex == 3)
             {
-                Calculations.RemoveAt(e.RowIndex);
+                Calculations.Remove(senderGrid.Rows[e.RowIndex].Tag as Calculation);
                 UpdateCalculationsView(Calculations);
             }
             else if (e.ColumnIndex == 4)
             {
-                Results += Calculations[e.RowIndex].Results;
+                Results += (senderGrid.Rows[e.RowIndex].Tag as Calculation).CalculateResults();
                 UpdateResultView(Results);
             }
         }
@@ -199,7 +199,7 @@ namespace RoiCalc
             }
         }
 
-        private void UpdateCalculationsView(IList<Calculation> calculations)
+        private void UpdateCalculationsView(ISet<Calculation> calculations)
         {
             dgvCalculations.Rows.Clear();
 
@@ -231,42 +231,12 @@ namespace RoiCalc
                 };
                 row.Cells.Add(interval_cell);
 
+                row.Tag = calculation;
+
                 dgvCalculations.Rows.Add(row);
             }
         }
 
-        private ResultCollection CalculateResults(Item item, int count, int interval)
-        {
-            var request = (float)count / interval;
-            return CalculateResults(item, request);
-        }
-
-        private ResultCollection CalculateResults(Item item, float request)
-        {
-            var results = new ResultCollection();
-            var production = (float)item.Count / item.Interval;
-            var required_count = request / production;
-            results.Add(item, required_count);
-
-            foreach (var Ingredient in item.Ingredients)
-            {
-                var Ingredient_request = ((required_count * Ingredient.Value) / item.Interval);
-                var res = CalculateResults(Ingredient.Key, Ingredient_request);
-                foreach (var r in res)
-                {
-                    if (results.ContainsKey(r.Key))
-                    {
-                        results[r.Key] += r.Value;
-                    }
-                    else
-                    {
-                        results.Add(r.Key, r.Value);
-                    }
-                }
-            }
-
-            return results;
-        }
 
         private void BtnCalc_Click(object sender, EventArgs e)
         {
@@ -285,15 +255,10 @@ namespace RoiCalc
                 return;
             }
 
-            Results = CalculateResults(SelectedItem, count, interval);
+            var calculation = new Calculation(SelectedItem, count, interval);
+            Results = calculation.CalculateResults();
             UpdateResultView(Results);
-            Calculations.Add(new Calculation()
-            {
-                Item = SelectedItem,
-                Count = count,
-                Interval = interval,
-                Results = Results
-            });
+            Calculations.Add(calculation);
             UpdateCalculationsView(Calculations);
         }
 
@@ -343,7 +308,7 @@ namespace RoiCalc
                 Items = ReadItems(dlg.FileName);
                 Results = null;
                 UpdateResultView(Results);
-                Calculations = new List<Calculation>();
+                Calculations = new HashSet<Calculation>();
                 UpdateCalculationsView(Calculations);
             }
         }
