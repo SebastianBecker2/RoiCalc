@@ -27,15 +27,7 @@ namespace RoiCalc
             set
             {
                 selected_item = value;
-                if (selected_item == null)
-                {
-                    lblItemName.Text = "Select an item";
-                    return;
-                }
-                else
-                {
-                    lblItemName.Text = selected_item.Name;
-                }
+                lblItemName.Text = selected_item?.Name;
                 pibItemImage.Image = selected_item?.Image;
             }
         }
