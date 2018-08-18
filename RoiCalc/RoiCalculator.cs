@@ -45,7 +45,14 @@ namespace RoiCalc
         public RoiCalculator()
         {
             InitializeComponent();
-            Items = ReadItems(Path.Combine(Directory.GetCurrentDirectory(), "Resources", ItemsFileName));
+            try
+            {
+                Items = ReadItems(Path.Combine(Directory.GetCurrentDirectory(), "Resources", ItemsFileName));
+            }
+            catch (FileNotFoundException)
+            {
+                Items = new Dictionary<string, Item>();
+            }
             dgvCalculations.CellContentClick += OnDgvCalculationsCellContentClick;
             SelectedItem = Items.FirstOrDefault().Value;
         }
