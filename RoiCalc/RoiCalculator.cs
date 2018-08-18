@@ -9,6 +9,8 @@ using System.Windows.Forms;
 
 namespace RoiCalc
 {
+    using Properties;
+
     public partial class RoiCalculator : Form
     {
         private const string ItemsFileName = @"items.roic";
@@ -29,6 +31,8 @@ namespace RoiCalc
                 selected_item = value;
                 lblItemName.Text = selected_item?.Name;
                 pibItemImage.Image = selected_item?.Image;
+                Settings.Default.SelectedItem = selected_item?.Name;
+                Settings.Default.Save();
             }
         }
         private Item selected_item;
@@ -46,7 +50,7 @@ namespace RoiCalc
                 Items = new Dictionary<string, Item>();
             }
             dgvCalculations.CellContentClick += OnDgvCalculationsCellContentClick;
-            SelectedItem = Items.FirstOrDefault().Value;
+            SelectedItem = Items.GetValueOrDefault(Settings.Default.SelectedItem) ?? Items.FirstOrDefault().Value;
         }
 
         private void OnDgvCalculationsCellContentClick(object sender, DataGridViewCellEventArgs e)
