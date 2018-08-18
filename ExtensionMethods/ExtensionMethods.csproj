@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="ColorExtensions.cs" />
     <Compile Include="ExceptionExtensions.cs" />
+    <Compile Include="IDictionaryExtensions.cs" />
     <Compile Include="ISynchronizeInvokeExtensions.cs" />
     <Compile Include="DateTimeExtensions.cs" />
     <Compile Include="IEnumerableExtensions.cs" />
